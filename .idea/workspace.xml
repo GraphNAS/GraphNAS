@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9cf24a45-da5f-4c3b-9459-2b139ba6515f" name="Default Changelist" comment="" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Graph_dgl$random_search.coverage" NAME="random_search Coverage Results" MODIFIED="1550647834687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$shared_gcn_skip_conn.coverage" NAME="shared_gcn_skip_conn Coverage Results" MODIFIED="1552477364438" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$gcn_controller_skip_connection.coverage" NAME="gcn_controller_skip_connection Coverage Results" MODIFIED="1552994597162" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/GraphNAS_simple$eval_citation.coverage" NAME="eval_citation Coverage Results" MODIFIED="1553931064807" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$ppi.coverage" NAME="ppi Coverage Results" MODIFIED="1553602236078" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/geometrics" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$main_for_skip_conn.coverage" NAME="main_for_skip_conn Coverage Results" MODIFIED="1551058535444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$nas_net_with_skip_conn.coverage" NAME="nas_net_with_skip_conn Coverage Results" MODIFIED="1550992240654" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$pytest_in_shared_gcn_skip_conn_py.coverage" NAME="pytest in shared_gcn_skip_conn.py Coverage Results" MODIFIED="1552476703536" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$eval_geo_ppi.coverage" NAME="eval_geo_ppi Coverage Results" MODIFIED="1553602103716" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/Graph_dgl$shared_gcn_citation.coverage" NAME="shared_gcn_citation Coverage Results" MODIFIED="1550576107983" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$random_search.coverage" NAME="random_search Coverage Results" MODIFIED="1550715223271" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$train.coverage" NAME="train Coverage Results" MODIFIED="1552958604276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval/model" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$eval_ppi.coverage" NAME="eval_ppi Coverage Results" MODIFIED="1553501853457" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$gcn.coverage" NAME="gcn Coverage Results" MODIFIED="1552959153412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval/model" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$graphsage.coverage" NAME="graphsage Coverage Results" MODIFIED="1553153400106" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval/model" />
+    <SUITE FILE_PATH="coverage/Graph_dgl$shared_gcn.coverage" NAME="shared_gcn Coverage Results" MODIFIED="1550630828255" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$shared_gcn.coverage" NAME="shared_gcn Coverage Results" MODIFIED="1552371685286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl$raw_gat.coverage" NAME="raw_gat Coverage Results" MODIFIED="1550573582645" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/pytorch/gat" />
+    <SUITE FILE_PATH="coverage/Graph_dgl$extractFromResult.coverage" NAME="extractFromResult Coverage Results" MODIFIED="1550490129965" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graph_dgl$main.coverage" NAME="main Coverage Results" MODIFIED="1550625121010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$gcn_controller.coverage" NAME="gcn_controller Coverage Results" MODIFIED="1553151742650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$main.coverage" NAME="main Coverage Results" MODIFIED="1553152149961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$shared_gcn_citation.coverage" NAME="shared_gcn_citation Coverage Results" MODIFIED="1551960308161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/Graph_dgl$gcn.coverage" NAME="gcn Coverage Results" MODIFIED="1550473368522" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/examples/pytorch/gcn" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$nas_init.coverage" NAME="nas_init Coverage Results" MODIFIED="1553238457882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/geometrics" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$attention_reducer.coverage" NAME="attention_reducer Coverage Results" MODIFIED="1550738774939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$eval_citation.coverage" NAME="eval_citation Coverage Results" MODIFIED="1553138842387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
+    <SUITE FILE_PATH="coverage/GraphNAS_simple$main.coverage" NAME="main Coverage Results" MODIFIED="1553858757872" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="2096420439">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="2" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="json" value="2" />
+          <entry key="py" value="22" />
+          <entry key="txt" value="6" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="2" />
+          <entry key="PLAIN_TEXT" value="6" />
+          <entry key="Python" value="22" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="Python Console" value="897" />
+          <entry key="py" value="2171" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Python" value="3068" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1411958442">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="7" />
+          <entry key="project.open.time.1" value="3" />
+          <entry key="project.open.time.27" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.46" value="1" />
+          <entry key="project.open.time.5" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="9" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="DockerFile" value="3" />
+          <entry key="Five_Epoch" value="1" />
+          <entry key="One_Epoch" value="3" />
+          <entry key="Readme" value="1" />
+          <entry key="best_structure" value="2" />
+          <entry key="best_structure_list" value="3" />
+          <entry key="best_structure_train" value="3" />
+          <entry key="gat_epoch_10" value="1" />
+          <entry key="gat_epoch_2" value="1" />
+          <entry key="gpu" value="2" />
+          <entry key="json" value="1" />
+          <entry key="md" value="1" />
+          <entry key="py" value="261" />
+          <entry key="run_command" value="2" />
+          <entry key="runing" value="1" />
+          <entry key="saved" value="2" />
+          <entry key="test1" value="1" />
+          <entry key="test2" value="3" />
+          <entry key="test3" value="4" />
+          <entry key="test_load_opt" value="1" />
+          <entry key="tmp" value="2" />
+          <entry key="txt" value="65" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="JSON" value="1" />
+          <entry key="Markdown" value="1" />
+          <entry key="PLAIN_TEXT" value="101" />
+          <entry key="Python" value="261" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="DockerFile" value="163" />
+          <entry key="Five_Epoch" value="1" />
+          <entry key="One_Epoch" value="21" />
+          <entry key="Python Console" value="4982" />
+          <entry key="best_structure" value="39" />
+          <entry key="best_structure_list" value="69" />
+          <entry key="dummy" value="37" />
+          <entry key="gpu" value="22" />
+          <entry key="py" value="10812" />
+          <entry key="run_command" value="22" />
+          <entry key="tmp" value="6" />
+          <entry key="txt" value="128" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="508" />
+          <entry key="Python" value="15794" />
+        </counts>
+      </usages-collector>
+    </session>
+    <session id="-1306126201">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.0" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="2" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="DockerFile" value="2" />
+          <entry key="LICENSE" value="1" />
+          <entry key="md" value="2" />
+          <entry key="py" value="48" />
+          <entry key="run_command" value="3" />
+          <entry key="txt" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Markdown" value="2" />
+          <entry key="PLAIN_TEXT" value="9" />
+          <entry key="Python" value="48" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="DockerFile" value="55" />
+          <entry key="dummy" value="21" />
+          <entry key="md" value="429" />
+          <entry key="py" value="1350" />
+          <entry key="txt" value="11" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Markdown" value="429" />
+          <entry key="PLAIN_TEXT" value="87" />
+          <entry key="Python" value="1350" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Graph_dgl_with_new_param_share" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eval/eval_citation.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="451">
+                <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DockerFile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/run_command">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret selection-end-column="40" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>pgv</find>
+      <find>num_gpu</find>
+      <find>graphviz</find>
+      <find>logger</find>
+      <find>mode</find>
+      <find>save_a</find>
+      <find>share_param</find>
+      <find>self.args</find>
+      <find>save_epi</find>
+      <find>reward_c</find>
+      <find>softmax_temperature</find>
+      <find>controller_lr</find>
+      <find>controller_grad_clip</find>
+      <find>action_list</find>
+      <find>_summarize_shared_train</find>
+      <find>entropy_coeff</find>
+      <find>build_args</find>
+      <find>entropy_mode</find>
+      <find>tanh_c</find>
+      <find>get_lo</find>
+      <find>imread</find>
+      <find>evaluate_structure</find>
+      <find>_summarize_controller_train</find>
+      <find>SharedCitationGCN</find>
+      <find>dataset</find>
+      <find>50</find>
+      <find>max_save</find>
+      <find>0.85</find>
+      <find>0.84</find>
+      <find>ETp</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>retrain_epochs=150</replace>
+      <replace>state_num</replace>
+      <replace>structure_list</replace>
+      <replace>CitationGNN</replace>
+      <replace>dataset</replace>
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/eval/test2" />
+        <option value="$PROJECT_DIR$/eval/test3" />
+        <option value="$PROJECT_DIR$/data/gat.py" />
+        <option value="$PROJECT_DIR$/eval/runing" />
+        <option value="$PROJECT_DIR$/eval/saved" />
+        <option value="$PROJECT_DIR$/eval/model/train.py" />
+        <option value="$PROJECT_DIR$/eval/model/gcn.py" />
+        <option value="$PROJECT_DIR$/eval/model/gcn_test.py" />
+        <option value="$PROJECT_DIR$/data_util/process_data_for_ppi.py" />
+        <option value="$PROJECT_DIR$/eval/PPI_results/retrain_2.txt" />
+        <option value="$PROJECT_DIR$/eval/eval_ppi_skop.py" />
+        <option value="$PROJECT_DIR$/eval/eval_ppi_skip.py" />
+        <option value="$PROJECT_DIR$/models/shared_gcn_skip_conn.py" />
+        <option value="$PROJECT_DIR$/models/gcn_controller_skip_connection.py" />
+        <option value="$PROJECT_DIR$/eval/model/graphsage.py" />
+        <option value="$PROJECT_DIR$/geometrics/results/ppi_results.txt" />
+        <option value="$PROJECT_DIR$/nas_module/nas_net_with_skip_conn.py" />
+        <option value="$PROJECT_DIR$/geometrics/nas_init.py" />
+        <option value="$PROJECT_DIR$/eval/eval_geo_ppi.py" />
+        <option value="$PROJECT_DIR$/geometrics/net_skip_conn.py" />
+        <option value="$PROJECT_DIR$/geometrics/net.py" />
+        <option value="$PROJECT_DIR$/geometrics/net_with_skip_conn.py" />
+        <option value="$PROJECT_DIR$/config.py" />
+        <option value="$PROJECT_DIR$/run_command" />
+        <option value="$PROJECT_DIR$/Dockerfile.gpu" />
+        <option value="$PROJECT_DIR$/nas_module/nas_net_with_bn.py" />
+        <option value="$PROJECT_DIR$/eval/eval_ppi.py" />
+        <option value="$PROJECT_DIR$/models/shared_gcn.py" />
+        <option value="$PROJECT_DIR$/geometrics/ppi.py" />
+        <option value="$PROJECT_DIR$/geometrics/nas_layer.py" />
+        <option value="$PROJECT_DIR$/models/gcn_controller.py" />
+        <option value="$PROJECT_DIR$/nas_module/nas_layer.py" />
+        <option value="$PROJECT_DIR$/nas_module/gnn.py" />
+        <option value="$PROJECT_DIR$/models/shared_gcn_citation.py" />
+        <option value="$PROJECT_DIR$/attention_module/attention_aggregator.py" />
+        <option value="$PROJECT_DIR$/attention_module/attention_prepare.py" />
+        <option value="$PROJECT_DIR$/attention_module/attention_reducer.py" />
+        <option value="$PROJECT_DIR$/attention_module/attention_finalize.py" />
+        <option value="$PROJECT_DIR$/models/operators.py" />
+        <option value="$PROJECT_DIR$/models/__init__.py" />
+        <option value="$PROJECT_DIR$/utils.py" />
+        <option value="$PROJECT_DIR$/models/gnn_controller.py" />
+        <option value="$PROJECT_DIR$/models/gnn.py" />
+        <option value="$PROJECT_DIR$/models/model_utils.py" />
+        <option value="$PROJECT_DIR$/trainer.py" />
+        <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/requirements.txt" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/eval/eval_citation.py" />
+        <option value="$PROJECT_DIR$/models/gnn_citation_manager.py" />
+        <option value="$PROJECT_DIR$/DockerFile" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="5" />
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="GraphNAS-simple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GraphNAS-simple" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GraphNAS-simple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GraphNAS-simple" type="462c0819:PsiDirectoryNode" />
+              <item name="eval" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="GraphNAS-simple" type="b2602c69:ProjectViewProjectNode" />
+              <item name="GraphNAS-simple" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$/geometrics" />
+      <recent name="$PROJECT_DIR$/utils" />
+      <recent name="$PROJECT_DIR$/nas_module" />
+      <recent name="$PROJECT_DIR$/attention_module" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/geometrics" />
+      <recent name="$PROJECT_DIR$/eval" />
+      <recent name="$PROJECT_DIR$/results/PPI/0226" />
+      <recent name="$PROJECT_DIR$/results/PPI" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.eval_citation">
+    <configuration name="eval_citation" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Graph_dgl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/eval" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval/eval_citation.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="eval_geo_ppi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Graph_dgl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/eval" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval/eval_geo_ppi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="eval_ppi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Graph_dgl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/eval" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/eval/eval_ppi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Graph_dgl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ppi" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Graph_dgl" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/geometrics" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/geometrics/ppi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.ppi" />
+      <item itemvalue="Python.eval_geo_ppi" />
+      <item itemvalue="Python.eval_ppi" />
+      <item itemvalue="Python.main" />
+      <item itemvalue="Python.eval_citation" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.eval_citation" />
+        <item itemvalue="Python.main" />
+        <item itemvalue="Python.ppi" />
+        <item itemvalue="Python.eval_geo_ppi" />
+        <item itemvalue="Python.eval_ppi" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9cf24a45-da5f-4c3b-9459-2b139ba6515f" name="Default Changelist" comment="" />
+      <created>1548493152965</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1548493152965</updated>
+    </task>
+    <task id="LOCAL-00001" summary="version 1.0. work well but redundancy.">
+      <created>1552373348424</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1552373348425</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_shared_gcn_skip_conn_py - 2019.02.24 at 15h 40m 50s.xml">
+      <configuration name="pytest in shared_gcn_skip_conn.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_shared_gcn_skip_conn_py - 2019.02.24 at 16h 07m 56s.xml">
+      <configuration name="pytest in shared_gcn_skip_conn.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_shared_gcn_skip_conn_py - 2019.02.26 at 09h 04m 07s.xml">
+      <configuration name="pytest in shared_gcn_skip_conn.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_shared_gcn_skip_conn_py - 2019.02.26 at 14h 46m 54s.xml">
+      <configuration name="pytest in shared_gcn_skip_conn.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_shared_gcn_skip_conn_py - 2019.03.13 at 19h 31m 44s.xml">
+      <configuration name="pytest in shared_gcn_skip_conn.py" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="5" y="23" width="1440" height="877" extended-state="0" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4970297" visible="true" weight="0.2811159" />
+      <window_info id="Structure" order="1" sideWeight="0.50174826" side_tool="true" weight="0.25822604" />
+      <window_info id="Favorites" order="2" sideWeight="0.5029703" side_tool="true" weight="0.21244635" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853373" weight="0.37707007" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.36433122" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49926686" weight="0.32356688" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50073314" side_tool="true" weight="0.32738853" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49926686" visible="true" weight="0.41528663" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.29808918" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Database" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4970297" visible="true" weight="0.28183118" />
+      <window_info id="Structure" order="1" sideWeight="0.50174826" side_tool="true" weight="0.25822604" />
+      <window_info id="Favorites" order="2" sideWeight="0.5029703" side_tool="true" weight="0.21244635" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853373" visible="true" weight="0.37707007" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.36506024" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32891566" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49926686" weight="0.32356688" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50073314" side_tool="true" weight="0.32738853" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49926686" weight="0.60254776" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.29808918" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Database" order="5" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="version 1.0. work well but redundancy." />
+    <option name="LAST_COMMIT_MESSAGE" value="version 1.0. work well but redundancy." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/examples/pytorch/gcn/gcn.py</url>
+          <line>171</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/attention_module/attention_reducer.py</url>
+          <line>33</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/attention_module/attention_reducer.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/results/Citeseer/analyse.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" log-message="true" suspend="NONE" type="python-line">
+          <url>file://$PROJECT_DIR$/test_script/Test0312.py</url>
+          <line>10</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/geometrics/net.py</url>
+          <line>44</line>
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/models/gnn.py</url>
+          <line>53</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/-662150009/torch/optim/optimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="42" column="34" selection-start-line="42" selection-start-column="28" selection-end-line="42" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gcn_controller_single_format.py" />
+    <entry file="file://$PROJECT_DIR$/models/shared_gcn_share_data.py" />
+    <entry file="file://$PROJECT_DIR$/eval/model/gcn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-354">
+          <caret line="42" column="20" selection-start-line="42" selection-start-column="20" selection-end-line="42" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval/model/train.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="71">
+          <caret line="147" column="20" selection-start-line="147" selection-start-column="20" selection-end-line="147" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval/model/graphsage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1536">
+          <caret line="87" column="8" selection-start-line="87" selection-start-column="8" selection-end-line="87" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/geometrics/results/ppi_results.txt" />
+    <entry file="file://$PROJECT_DIR$/nas_module/nas_layer_with_skip_conn.py" />
+    <entry file="file://$PROJECT_DIR$/geometrics/config_handler.py" />
+    <entry file="file://$PROJECT_DIR$/geometrics/nas_init.py" />
+    <entry file="file://$PROJECT_DIR$/nas_module/nas_net_with_skip_conn.py" />
+    <entry file="file://$PROJECT_DIR$/geometrics/net_with_skip_conn.py" />
+    <entry file="file://$PROJECT_DIR$/Dockerfile.gpu">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval/eval_ppi.py" />
+    <entry file="file://$PROJECT_DIR$/eval/eval_geo_ppi.py" />
+    <entry file="file://$PROJECT_DIR$/geometrics/net.py" />
+    <entry file="file://$PROJECT_DIR$/geometrics/ppi.py" />
+    <entry file="file://$PROJECT_DIR$/geometrics/nas_layer.py" />
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/1804136675/argparse.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="263">
+          <caret line="1739" column="8" selection-start-line="1739" selection-start-column="8" selection-end-line="1739" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/extractFromResult.py" />
+    <entry file="file://$PROJECT_DIR$/eval/eval_ppi_skip.py" />
+    <entry file="file://$PROJECT_DIR$/models/shared_gcn_skip_conn.py" />
+    <entry file="file://$PROJECT_DIR$/models/gcn_controller_skip_connection.py" />
+    <entry file="file://$PROJECT_DIR$/models/random_search.py" />
+    <entry file="file://$PROJECT_DIR$/models/shared_gcn.py" />
+    <entry file="file://$PROJECT_DIR$/test_script/Test0312.py" />
+    <entry file="file://$PROJECT_DIR$/nas_module/nas_layer.py" />
+    <entry file="file://$PROJECT_DIR$/attention_module/__init__.py" />
+    <entry file="file://$PROJECT_DIR$/attention_module/attention_aggregator.py" />
+    <entry file="file://$PROJECT_DIR$/attention_module/attention_prepare.py" />
+    <entry file="file://$PROJECT_DIR$/attention_module/attention_reducer.py" />
+    <entry file="file://$PROJECT_DIR$/attention_module/attention_finalize.py" />
+    <entry file="file://$PROJECT_DIR$/models/operators.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="9" column="35" selection-start-line="9" selection-start-column="35" selection-end-line="9" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/-662150009/torch/nn/modules/module.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="534" selection-start-line="534" selection-end-line="534" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval/PPI_results/retrain_2.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="565">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn_controller.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+          <folding>
+            <element signature="e#50#62#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="49" column="48" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="48" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/model_utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="82" column="42" lean-forward="true" selection-start-line="82" selection-start-column="42" selection-end-line="82" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/-662150009/torch/serialization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="217" selection-start-line="217" selection-end-line="217" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="91" column="35" selection-start-line="91" selection-start-column="25" selection-end-line="91" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/LICENSE">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4090" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22">
+          <caret line="19" column="18" lean-forward="true" selection-start-line="19" selection-start-column="18" selection-end-line="19" selection-end-column="18" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/trainer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="309" selection-start-line="309" selection-end-line="309" />
+          <folding>
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="66">
+          <caret line="3" column="8" lean-forward="true" selection-start-line="3" selection-start-column="8" selection-end-line="3" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="16" selection-start-line="16" selection-end-line="18" selection-end-column="48" />
+          <folding>
+            <element signature="e#20#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn_citation_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="223" lean-forward="true" selection-start-line="223" selection-end-line="223" />
+          <folding>
+            <element signature="e#137#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eval/eval_citation.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="451">
+            <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_command">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DockerFile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
