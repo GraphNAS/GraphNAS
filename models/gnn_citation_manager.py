@@ -12,10 +12,18 @@ import numpy as np
 import torch
 import torch.nn.functional as F
 from dgl import DGLGraph
-from dgl.data import load_data as load
-
+from dgl.data import load_data
 from models.gnn import GraphNet
 from models.model_utils import EarlyStop, TopAverage, process_action
+
+
+def load(args, save_file="citation.npy"):
+    if os.path.exists(save_file):
+        return np.load(save_file).tolist()
+    else:
+        datas = load_data(args)
+        np.save(save_file, datas)
+        return datas
 
 
 def evaluate(output, labels, mask):
@@ -37,8 +45,6 @@ class CitationGNN(object):
 
         else:
             raise Exception("args has no dataset")
-        if data_function:
-            self.group_feats, self.group_edge, self.group_labels, self.group_graphs = data_function("new_ppi.npy")
         self.early_stop_manager = EarlyStop(10)
         self.reward_manager = TopAverage(10)
 

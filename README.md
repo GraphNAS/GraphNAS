@@ -6,12 +6,12 @@ GraphNAS-simple 是 GraphNAS的简化版，提供了GraphNAS运行的必备组�
 > pip install pytorch 
 * docker
 > docker build -t graphnas -f DockerFile . \
-> docker run -it -v $(pwd):/GraphNAS graphnas
+> docker run -it -v $(pwd):/GraphNAS graphnas python main.py
 
-进入docker后，运行
-> pip install pytorch 
+[ood]:进入docker后，运行
 
-**pytorch是GraphNAS的依赖库，没有将其加入requirements.txt,是因为pytorch的包较大，安装过程中容易下载出错，导致docker创建失败**
+
+[ood]:**pytorch是GraphNAS的依赖库，没有将其加入requirements.txt,是因为pytorch的包较大，安装过程中容易下载出错，导致docker创建失败**
 
 ##程序说明
 * |--main.py 程序入口，包含了程序需要的参数

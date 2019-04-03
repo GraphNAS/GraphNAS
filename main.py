@@ -44,7 +44,7 @@ def build_args():
     # child model
     parser.add_argument("--dataset", type=str, default="cora", required=False,
                         help="The input dataset.")
-    parser.add_argument("--epochs", type=int, default=2,
+    parser.add_argument("--epochs", type=int, default=300,
                         help="number of training epochs")
     parser.add_argument("--retrain_epochs", type=int, default=300,
                         help="number of training epochs")
