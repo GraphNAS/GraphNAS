@@ -4,7 +4,7 @@ import sys
 import torch
 import torch.nn.functional as F
 
-sys.path.extend(['../'])
+# sys.path.extend(['/GraphNAS'])
 from models.gnn_citation_manager import CitationGNN, evaluate, process_action, GraphNet
 
 
@@ -103,7 +103,8 @@ def eval_actions(actions):
 
 
 if __name__ == "__main__":
-    actions = ['none', 'mlp', 'leaky_relu', 16, 64, 'bilinear', 'sum', 'elu', 4, 7]
+    # actions = ['none', 'mlp', 'leaky_relu', 16, 64, 'bilinear', 'sum', 'elu', 4, 7]
+    actions = ['linear', 'max', 'relu6', 6, 256, 'cos', 'mean', 'sigmoid', 8, 7]
     eval_actions(actions)
 
 

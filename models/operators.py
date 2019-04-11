@@ -204,9 +204,6 @@ class GeneralizedLinearReduce(GATReduce):
 #######################################################
 
 class SumAggregator(nn.Module):
-    '''
-        Attention Prepare Layer
-    '''
 
     def __init__(self):
         super(SumAggregator, self).__init__()
@@ -216,9 +213,6 @@ class SumAggregator(nn.Module):
 
 
 class MaxPoolingAggregator(SumAggregator):
-    '''
-        Attention Prepare Layer
-    '''
 
     def __init__(self, input_dim, pooling_dim=512, num_fc=1, act=F.leaky_relu_):
         super(MaxPoolingAggregator, self).__init__()
@@ -239,9 +233,6 @@ class MaxPoolingAggregator(SumAggregator):
 
 
 class MeanPoolingAggregator(MaxPoolingAggregator):
-    '''
-        Attention Prepare Layer
-    '''
 
     def __init__(self, input_dim, pooling_dim=512, num_fc=1, act=F.leaky_relu_):
         super(MeanPoolingAggregator, self).__init__(input_dim, pooling_dim, num_fc, act)
@@ -254,9 +245,6 @@ class MeanPoolingAggregator(MaxPoolingAggregator):
 
 
 class MLPAggregator(MaxPoolingAggregator):
-    '''
-        Attention Prepare Layer
-    '''
 
     def __init__(self, input_dim, pooling_dim=512, num_fc=1, act=F.leaky_relu_):
         super(MLPAggregator, self).__init__(input_dim, pooling_dim, num_fc, act)
@@ -269,9 +257,6 @@ class MLPAggregator(MaxPoolingAggregator):
 
 
 class LSTMAggregator(SumAggregator):
-    '''
-        Attention Prepare Layer
-    '''
 
     def __init__(self, input_dim, pooling_dim=512):
         super(LSTMAggregator, self).__init__()
@@ -285,9 +270,6 @@ class LSTMAggregator(SumAggregator):
 
 
 class GRUAggregator(SumAggregator):
-    '''
-        Attention Prepare Layer
-    '''
 
     def __init__(self, input_dim, pooling_dim=512):
         super(LSTMAggregator, self).__init__()

@@ -5,7 +5,8 @@ from models.operators import *
 
 class GraphNet(torch.nn.Module):
 
-    def __init__(self, actions, num_feat, num_label, drop_out=0.6, multi_label=False, batch_normal=True, state_num=5):
+    def __init__(self, actions, num_feat, num_label, drop_out=0.6, multi_label=False, batch_normal=True, residual=True,
+                 state_num=5):
         '''
         目前认为prediction层存在，方便加入skip-connection层
         :param actions:
@@ -13,11 +14,12 @@ class GraphNet(torch.nn.Module):
         '''
         super(GraphNet, self).__init__()
         # args
-        self.jk_type = actions[-1]
+        self.jk_type = "none"
         self.multi_label = multi_label
         self.num_feat = num_feat
         self.num_label = num_label
         self.dropout = drop_out
+        self.residual = residual
         # check structure of GNN
         self.layer_nums = self.evalate_actions(actions, state_num)
 
@@ -76,9 +78,9 @@ class GraphNet(torch.nn.Module):
             else:
                 pass
             if i == 0:
-                residual = True  # TODO
+                residual = True and self.residual  # TODO
             else:
-                residual = True
+                residual = True and self.residual
             self.layers.append(
                 NASLayer(attention_type, aggregator_type, act, head_num, in_channels, out_channels, dropout=drop_out,
                          concat=concat, residual=residual, batch_normal=batch_normal))

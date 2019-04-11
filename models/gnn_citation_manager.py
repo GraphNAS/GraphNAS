@@ -87,8 +87,7 @@ class CitationGNN(object):
         print("train action:", actions)
 
         # create model
-        model = GraphNet(actions, self.in_feats, self.n_classes, drop_out=self.args.in_drop, multi_label=False,
-                         batch_normal=False)
+        model = self.build_gnn(actions)
 
         # share params
         # model.load_param(self.shared_params)
@@ -121,6 +120,11 @@ class CitationGNN(object):
 
         return reward, val_acc
 
+    def build_gnn(self, actions):
+        model = GraphNet(actions, self.in_feats, self.n_classes, drop_out=self.args.in_drop, multi_label=False,
+                         batch_normal=False)
+        return model
+
     def evaluate(self, actions=None, dataset="cora", format="two"):
         if self.args.cuda:
             torch.cuda.empty_cache()
@@ -131,8 +135,7 @@ class CitationGNN(object):
         print("train action:", actions)
 
         # create model
-        model = GraphNet(actions, self.in_feats, self.n_classes, drop_out=self.args.in_drop, multi_label=False,
-                         batch_normal=False)
+        model = self.build_gnn(actions)
         if self.args.cuda:
             model.cuda()
         total = sum([param.nelement() for param in model.parameters()])
@@ -162,8 +165,7 @@ class CitationGNN(object):
         print("retrain action:", actions)
 
         # create model
-        model = GraphNet(actions, self.in_feats, self.n_classes, drop_out=self.args.in_drop, multi_label=False,
-                         batch_normal=False)
+        model = self.build_gnn(actions)
         if self.args.cuda:
             model.cuda()
 

@@ -9,7 +9,8 @@ from torch import nn
 import models
 import utils
 from models.gnn_citation_manager import CitationGNN
-
+from models.geo.geo_gnn_citation_manager import GeoCitationManager
+from models.geo.geo_gnn_ppi_manager import GeoPPIManager
 logger = utils.get_logger()
 
 
@@ -72,9 +73,17 @@ class Trainer(object):
             logger.info("NAS-like mode: retrain without share param")
             pass
 
-        if self.args.dataset in ["cora"]:
+        if self.args.dataset in ["cora", "citeseer", "pubmed"]:
             self.shared = CitationGNN(self.args)
             self.controller = models.GNNNASController(self.args, cuda=self.args.cuda, num_layers=2)
+
+        if self.args.dataset in ["Cora", "Citeseer", "Pubmed"]:
+            self.shared = GeoCitationManager(self.args)
+            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda, num_layers=2)
+
+        if self.args.dataset == "PPI":
+            self.shared = GeoPPIManager(self.args)
+            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda, num_layers=3)
 
         if self.cuda:
             self.controller.cuda()
@@ -118,7 +127,7 @@ class Trainer(object):
                 _, val_score = self.shared.train(action)
                 logger.info(f"{action}, val_score:{val_score}")
             except RuntimeError as e:
-                if 'out of memory' in str(e):  # usually CUDA Out of Memory
+                if 'CUDA' in str(e):  # usually CUDA Out of Memory
                     print(e)
                 else:
                     raise e

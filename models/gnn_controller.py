@@ -7,7 +7,7 @@ import utils
 
 state_space = {
     # "bn": ["yes", "no"],
-    "attention_type": ["gat", "gcn", "cos", "none", "gat_sym", 'linear', 'bilinear', 'generalized_linear'],
+    "attention_type": ["gat", "gcn", "cos", "const", "gat_sym", 'linear', 'generalized_linear'],
     'aggregator_type': ["sum", "mean", "max", "mlp", ],  # remove lstm
     'activate_function': ["sigmoid", "tanh", "relu", "linear",
                           "softplus", "leaky_relu", "relu6", "elu"],

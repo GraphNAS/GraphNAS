@@ -27,8 +27,8 @@ def build_args():
     parser.add_argument('--shared_rnn_max_length', type=int, default=35)
     parser.add_argument('--load_path', type=str, default='')
     parser.add_argument('--search_mode', type=str, choices=['enas', 'nas', 'graphnas'],
-                        default='graphnas')
-    parser.add_argument('--max_epoch', type=int, default=200)
+                        default='nas')
+    parser.add_argument('--max_epoch', type=int, default=1000)
     # NOTE(brendan): irrelevant for actor critic.
     parser.add_argument('--ema_baseline_decay', type=float, default=0.95)  # TODO: very important
     parser.add_argument('--discount', type=float, default=1.0)  # TODO
@@ -40,13 +40,14 @@ def build_args():
     parser.add_argument('--controller_grad_clip', type=float, default=0)
     parser.add_argument('--tanh_c', type=float, default=2.5)
     parser.add_argument('--softmax_temperature', type=float, default=5.0)
+    parser.add_argument('--derive_num_sample', type=int, default=100)
 
     # child model
-    parser.add_argument("--dataset", type=str, default="cora", required=False,
+    parser.add_argument("--dataset", type=str, default="Pubmed", required=False,
                         help="The input dataset.")
-    parser.add_argument("--epochs", type=int, default=300,
+    parser.add_argument("--epochs", type=int, default=200,
                         help="number of training epochs")
-    parser.add_argument("--retrain_epochs", type=int, default=300,
+    parser.add_argument("--retrain_epochs", type=int, default=200,
                         help="number of training epochs")
     parser.add_argument("--multi_label", type=bool, default=False,
                         help="multi_label or single_label task")
@@ -64,6 +65,17 @@ def build_args():
     parser.add_argument('--max_param', type=float, default=5E6)
     args = parser.parse_args()
 
+    return args
+
+
+def build_args_for_ppi():
+    args = build_args()
+    args.dataset = "PPI"
+    args.in_feats = 50
+    args.num_class = 121
+    args.in_drop = 0
+    args.weight_decay = 0
+    args.epochs = 50
     return args
 
 
@@ -93,4 +105,6 @@ def main(args):  # pylint:disable=redefined-outer-name
 
 if __name__ == "__main__":
     args = build_args()
+    if args.dataset == "PPI":
+        args = build_args_for_ppi()
     main(args)
