@@ -48,7 +48,7 @@ class GraphNet(BaseNet):
 
             self.layers.append(
                 GeoLayer(in_channels, out_channels, head_num, concat, dropout=self.dropout,
-                         att_type=attention_type, agg_type=aggregator_type,))
+                         att_type=attention_type, agg_type=aggregator_type, ))
             self.acts.append(util.act_map(act))
             if self.residual:
                 if concat:
@@ -76,3 +76,37 @@ class GraphNet(BaseNet):
             result_lines += str(each)
         return result_lines
 
+    @staticmethod
+    def merge_param(old_param, new_param, update_all):
+        for key in new_param:
+            if update_all or key not in old_param:
+                old_param[key] = new_param[key]
+        return old_param
+
+    def get_param_dict(self, old_param=None, update_all=True):
+        if old_param is None:
+            result = {}
+        else:
+            result = old_param
+        for i in range(self.layer_nums):
+            key = "layer_%d" % i
+            new_param = self.layers[i].get_param_dict()
+            if key in result:
+                new_param = self.merge_param(result[key], new_param, update_all)
+                result[key] = new_param
+            else:
+                result[key] = new_param
+        if self.residual:
+            result["fcs"] = self.fcs
+        return result
+
+    def load_param(self, param):
+        if param is None:
+            return
+        for i in range(self.layer_nums):
+            self.layers[i].load_param(param["layer_%d" % i])
+        if self.residual and "fcs" in param:
+            fcs = param["fcs"]
+            for i, fc in enumerate(fcs):
+                if self.fcs[i].weight.size() == fc.weight.size():
+                    self.fcs[i] = fc

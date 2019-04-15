@@ -183,7 +183,36 @@ class GeoLayer(MessagePassing):
                                              self.out_channels, self.heads)
 
     def get_param_dict(self):
-        pass
+        params = {}
+        key = f"{self.att_type}_{self.agg_type}_{self.in_channels}_{self.out_channels}_{self.heads}"
+        weight_key = key + "_weight"
+        att_key = key + "_att"
+        agg_key = key + "_agg"
+        bais_key = key + "_bais"
 
-    def load_param(self, param):
-        pass
+        params[weight_key] = self.weight
+        params[att_key] = self.att
+        params[bais_key] = self.bias
+        if hasattr(self, "pool_layer"):
+            params[agg_key] = self.pool_layer.state_dict()
+
+        return params
+
+    def load_param(self, params):
+        key = f"{self.att_type}_{self.agg_type}_{self.in_channels}_{self.out_channels}_{self.heads}"
+        weight_key = key + "_weight"
+        att_key = key + "_att"
+        agg_key = key + "_agg"
+        bais_key = key + "_bais"
+
+        if weight_key in params:
+            self.weight = params[weight_key]
+
+        if att_key in params:
+            self.att = params[att_key]
+
+        if bais_key in params:
+            self.bias = params[bais_key]
+
+        if agg_key in params and hasattr(self, "pool_layer"):
+            self.pool_layer.load_state_dict(params[agg_key])

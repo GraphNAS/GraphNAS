@@ -111,6 +111,35 @@ def evaluate_gnn():
         print('Epoch: {:02d}, Loss: {:.4f}, val_acc: {:.4f}, test_acc:{:.4f}'.format(epoch, loss, acc, test_acc))
 
 
+def evaluate_gnn_share_param():
+    global actions
+    model = build_model(actions)
+
+    path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'data', 'PPI')
+    train_dataset = PPI(path, split='train')
+    val_dataset = PPI(path, split='val')
+    test_dataset = PPI(path, split='test')
+    train_loader = DataLoader(train_dataset, batch_size=1, shuffle=True)
+    val_loader = DataLoader(val_dataset, batch_size=2, shuffle=False)
+    test_loader = DataLoader(test_dataset, batch_size=2, shuffle=False)
+    loss_op = torch.nn.BCEWithLogitsLoss()
+
+    device = torch.device('cuda:1' if torch.cuda.is_available() else 'cpu')
+    model.load_param(torch.load("ppi_gnn"))
+    model = model.to(device)
+
+    optimizer = torch.optim.Adam(model.parameters(), lr=0.005)
+
+    for epoch in range(1, 10):
+        loss = train(model, optimizer, train_loader, device, loss_op)
+        acc = test(model, val_loader, device)
+        test_acc = test(model, test_loader, device)
+        print('Epoch: {:02d}, Loss: {:.4f}, val_acc: {:.4f}, test_acc:{:.4f}'.format(epoch, loss, acc, test_acc))
+
+    state_dict = model.get_param_dict()
+    torch.save(state_dict, "ppi_gnn")
+
+
 def test_manager():
     args = build_args()
     manager = GeoPPIManager(args)
@@ -119,7 +148,7 @@ def test_manager():
 
 if __name__ == "__main__":
     actions = ['gat', 'sum', 'elu', 4, 256, 'gat', 'sum', 'elu', 4, 256, 'gat', 'sum', 'linear', 6, 121]
-    actions = ['gcn', 'mlp', 'tanh', 2, 32, 'gcn', 'mean', 'leaky_relu', 2, 64, 'gat_sym', 'mlp', 'elu', 1, 121]
-    actions = ['gcn', 'sum', 'linear', 1, 64, 'cos', 'mlp', 'softplus', 16, 256, 'cos', 'mlp', 'leaky_relu', 4, 121]
+    actions = ['gcn', 'mlp', 'tanh', 4, 32, 'gcn', 'mean', 'leaky_relu', 2, 64, 'gat_sym', 'mlp', 'elu', 1, 121]
     # evaluate_gnn()
-    test_manager()
+    # test_manager()
+    evaluate_gnn_share_param()
