@@ -108,7 +108,7 @@ class CitationGNN(object):
         reward = self.reward_manager.get_reward(val_acc)
         self.save_param(model, update_all=(reward > 0))
 
-        with open('citetion_result.txt', "a") as file:
+        with open(f'{self.args.dataset}_result.txt', "a") as file:
             file.write(str(actions))
 
             file.write(",")

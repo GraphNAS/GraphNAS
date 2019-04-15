@@ -8,9 +8,10 @@ from torch import nn
 
 import models
 import utils
-from models.gnn_citation_manager import CitationGNN
 from models.geo.geo_gnn_citation_manager import GeoCitationManager
 from models.geo.geo_gnn_ppi_manager import GeoPPIManager
+from models.gnn_citation_manager import CitationGNN
+
 logger = utils.get_logger()
 
 
@@ -44,7 +45,6 @@ class Trainer(object):
         self.controller_step = 0  # counter for controller
         self.cuda = args.cuda
         self.epoch = 0
-        self.shared_step = 0  # counter for sub_model
         self.start_epoch = 0
 
         # remove regulation
@@ -59,7 +59,7 @@ class Trainer(object):
         controller_optimizer = _get_optimizer(self.args.controller_optim)
         self.controller_optim = controller_optimizer(self.controller.parameters(), lr=self.args.controller_lr)
 
-        if self.args.load_path:
+        if self.args.mode == "derive":
             self.load_model()
 
         self.ce = nn.CrossEntropyLoss()
@@ -75,15 +75,18 @@ class Trainer(object):
 
         if self.args.dataset in ["cora", "citeseer", "pubmed"]:
             self.shared = CitationGNN(self.args)
-            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda, num_layers=2)
+            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda,
+                                                      num_layers=self.args.layers_of_child_model)
 
         if self.args.dataset in ["Cora", "Citeseer", "Pubmed"]:
             self.shared = GeoCitationManager(self.args)
-            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda, num_layers=2)
+            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda,
+                                                      num_layers=self.args.layers_of_child_model)
 
         if self.args.dataset == "PPI":
             self.shared = GeoPPIManager(self.args)
-            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda, num_layers=3)
+            self.controller = models.GNNNASController(self.args, cuda=self.args.cuda,
+                                                      num_layers=self.args.layers_of_child_model)
 
         if self.cuda:
             self.controller.cuda()
@@ -131,7 +134,6 @@ class Trainer(object):
                     print(e)
                 else:
                     raise e
-            self.shared_step += 1
 
         print("*" * 35, "training over", "*" * 35)
 
@@ -247,37 +249,55 @@ class Trainer(object):
         else:
             return
 
-        logger.info(f'eval | {action} | loss: {reward:8.2f} | ppl: {scores:8.2f}')
+        logger.info(f'eval | {action} | reward: {reward:8.2f} | scores: {scores:8.2f}')
+
+    def derive_nas(self):
+        with open(f"{self.args.dataset}_result.txt") as f:
+            lines = f.readlines()
+        best_actions = []
+        best_val_score = "0"
+        for line in lines:
+            actions_index = line.index("]")
+            actions = line[:actions_index + 1]
+            score = line.split(",")[-1]
+            if score > best_val_score:
+                best_actions = actions
+        best_actions = eval(best_actions)
+        print("best structure:" + str(best_actions))
+        print(self.evaluate(best_actions))
+        return best_actions
 
     def derive(self, sample_num=None):
         """
         sample a serial of structures, and return the best structure.
         """
+        if self.args.search_mode == "nas":
+            return self.derive_nas()
+        else:
+            if sample_num is None:
+                sample_num = self.args.derive_num_sample
 
-        if sample_num is None:
-            sample_num = self.args.derive_num_sample
+            structure_list, _, entropies = self.controller.sample(sample_num, with_details=True)
 
-        structure_list, _, entropies = self.controller.sample(sample_num, with_details=True)
+            max_R = 0
+            best_actions = None
+            filename = f"{self.args.dataset}_{self.args.search_mode}_results.txt"
+            for actions in structure_list:
+                results = self.get_reward(actions, entropies, None)
+                if results:
+                    R, _ = results
+                else:
+                    continue
+                if R.max() > max_R:
+                    max_R = R.max()
+                    best_actions = actions
+                with open(filename, "a") as f:
+                    msg = f"actions:{actions},reward:{R}\n"
+                    f.write(msg)
 
-        max_R = 0
-        best_actions = None
-        filename = f"{self.args.dataset}_{self.args.search_mode}_results.txt"
-        for actions in structure_list:
-            results = self.get_reward(actions, entropies, None)
-            if results:
-                R, _ = results
-            else:
-                continue
-            if R.max() > max_R:
-                max_R = R.max()
-                best_actions = actions
-            with open(filename, "a") as f:
-                msg = f"actions:{actions},reward:{R}\n"
-                f.write(msg)
+            logger.info(f'derive | max_R: {max_R:8.6f}')
 
-        logger.info(f'derive | max_R: {max_R:8.6f}')
-
-        return best_actions
+            return best_actions
 
     @property
     def controller_path(self):
@@ -294,7 +314,7 @@ class Trainer(object):
         def get_numbers(items, delimiter, idx, replace_word, must_contain=''):
             return list(set([int(
                 name.split(delimiter)[idx].replace(replace_word, ''))
-                for name in basenames if must_contain in name]))
+                for name in items if must_contain in name]))
 
         basenames = [os.path.basename(path.rsplit('.', 1)[0]) for path in paths]
         epochs = get_numbers(basenames, '_', 1, 'epoch')
@@ -331,18 +351,10 @@ class Trainer(object):
             return
 
         self.epoch = self.start_epoch = max(epochs)
-        self.shared_step = max(shared_steps)
         self.controller_step = max(controller_steps)
 
-        if self.args.num_gpu == 0:
-            map_location = lambda storage, loc: storage
-        else:
-            map_location = None
-
         self.controller.load_state_dict(
-            torch.load(self.controller_path, map_location=map_location))
+            torch.load(self.controller_path))
         self.controller_optim.load_state_dict(
-            torch.load(self.controller_optimizer_path, map_location=map_location))
+            torch.load(self.controller_optimizer_path))
         logger.info(f'[*] LOADED: {self.controller_path}')
-
-

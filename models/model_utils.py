@@ -67,7 +67,7 @@ class EarlyStop(object):
     def should_save(self, train_loss, train_score, val_loss, val_score):
         if len(self.val_loss_list) < 1:
             return False
-        if val_loss <= min(self.val_loss_list) and val_score >= max(self.val_score_list):
+        if train_loss < min(self.train_loss) and val_score > max(self.val_score_list):
             # if val_loss < min(self.val_loss_list) and val_score > max(self.val_score_list):
             return True
         else:

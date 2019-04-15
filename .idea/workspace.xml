@@ -1,36 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9cf24a45-da5f-4c3b-9459-2b139ba6515f" name="Default Changelist" comment="version 1.2, add pytorch-geometrics implements.">
-      <change afterPath="$PROJECT_DIR$/eval/eval_geo_citation.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eval/eval_geo_ppi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eval/gat.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eval/gatWithGeoLayer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eval/ppi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/geo_gnn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/geo_layer.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/message_passing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/geo/utils.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/gnn_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/gnn_ppi_manager.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2p_dataset/ppi-G.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2p_dataset/ppi-class_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2p_dataset/ppi-feats.npy" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2p_dataset/ppi-id_map.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/p2p_dataset/ppi-walks.txt" afterDir="false" />
+    <list default="true" id="9cf24a45-da5f-4c3b-9459-2b139ba6515f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cora/controller_epoch0_step5.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/cora/controller_epoch0_step5_optimizer.pth" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/eval_citation.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval/eval_citation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/gnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/gnn_citation_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/gnn_citation_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gnn_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/gnn_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/operators.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/operators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/model_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/trainer.py" beforeDir="false" afterPath="$PROJECT_DIR$/trainer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -73,29 +49,7 @@
     <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$nas_init.coverage" NAME="nas_init Coverage Results" MODIFIED="1553238457882" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/geometrics" />
     <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$attention_reducer.coverage" NAME="attention_reducer Coverage Results" MODIFIED="1550738774939" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Graph_dgl_with_new_param_share$eval_citation.coverage" NAME="eval_citation Coverage Results" MODIFIED="1553138842387" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/eval" />
-    <SUITE FILE_PATH="coverage/GraphNAS_simple$main.coverage" NAME="main Coverage Results" MODIFIED="1554947647970" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-  </component>
-  <component name="DockManager">
-    <window id="1">
-      <content type="file-editors">
-        <state>
-          <leaf>
-            <file pinned="false" current-in-tab="true">
-              <entry file="file://$PROJECT_DIR$/models/gnn_ppi_manager.py">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state relative-caret-position="-1306">
-                    <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
-                    <folding>
-                      <element signature="e#0#15#0" expanded="true" />
-                    </folding>
-                  </state>
-                </provider>
-              </entry>
-            </file>
-          </leaf>
-        </state>
-      </content>
-    </window>
+    <SUITE FILE_PATH="coverage/GraphNAS_simple$main.coverage" NAME="main Coverage Results" MODIFIED="1554967781310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FUSProjectUsageTrigger">
     <session id="2096420439">
@@ -219,35 +173,35 @@
         <counts>
           <entry key="DockerFile" value="3" />
           <entry key="LICENSE" value="1" />
-          <entry key="md" value="2" />
-          <entry key="py" value="147" />
+          <entry key="md" value="3" />
+          <entry key="py" value="151" />
           <entry key="run_command" value="3" />
-          <entry key="txt" value="6" />
+          <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="147" />
+          <entry key="Markdown" value="3" />
+          <entry key="PLAIN_TEXT" value="14" />
+          <entry key="Python" value="151" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="DockerFile" value="72" />
-          <entry key="Python Console" value="139" />
+          <entry key="Python Console" value="202" />
           <entry key="dummy" value="24" />
           <entry key="md" value="453" />
-          <entry key="py" value="5582" />
+          <entry key="py" value="6124" />
           <entry key="run_command" value="28" />
-          <entry key="txt" value="83" />
+          <entry key="txt" value="86" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="453" />
-          <entry key="PLAIN_TEXT" value="207" />
-          <entry key="Python" value="5721" />
+          <entry key="PLAIN_TEXT" value="210" />
+          <entry key="Python" value="6326" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -265,8 +219,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2981">
-              <caret line="139" selection-start-line="139" selection-end-line="139" />
+            <state relative-caret-position="272">
+              <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
@@ -275,12 +229,30 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="263">
+                <caret line="54" selection-start-line="54" selection-end-line="54" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/citetion_result.txt">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/trainer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="124">
-              <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+            <state relative-caret-position="516">
+              <caret line="254" column="58" selection-start-line="254" selection-start-column="58" selection-end-line="254" selection-end-column="58" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
+                <marker date="1555041624139" expanded="true" signature="8470:9026" ph="..." />
               </folding>
             </state>
           </provider>
@@ -290,29 +262,20 @@
         <entry file="file://$PROJECT_DIR$/DockerFile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="198">
-              <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
-              <folding>
-                <element signature="e#20#35#0" expanded="true" />
-                <marker date="1554950560882" expanded="true" signature="3535:3719" ph="..." />
-              </folding>
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/-662150009/torch/tensor.py">
+        <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="101" selection-start-line="101" selection-end-line="101" />
+            <state relative-caret-position="-339">
+              <caret line="22" column="48" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="48" />
+              <folding>
+                <element signature="e#20#35#0" expanded="true" />
+                <marker date="1554967780786" expanded="true" signature="3605:3867" ph="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -321,7 +284,7 @@
         <entry file="file://$PROJECT_DIR$/requirements.txt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+              <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -329,20 +292,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="57" selection-start-line="57" selection-end-line="57" />
-              <folding>
-                <element signature="e#0#21#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/geo/geo_layer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="138" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="231">
+              <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
               <folding>
                 <element signature="e#0#12#0" expanded="true" />
               </folding>
@@ -351,24 +302,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/models/gnn_citation_manager.py">
+        <entry file="file://$PROJECT_DIR$/models/model_utils.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-52">
-              <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
-              <folding>
-                <element signature="e#137#146#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="276">
+              <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/eval/eval_geo_citation.py">
+        <entry file="file://$PROJECT_DIR$/models/gnn_citation_manager.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-277">
-              <caret line="16" column="4" selection-start-line="16" selection-start-column="4" selection-end-line="16" selection-end-column="4" />
+            <state relative-caret-position="2626">
+              <caret line="243" selection-start-line="243" selection-end-line="245" selection-end-column="21" />
               <folding>
-                <element signature="e#0#15#0" expanded="true" />
+                <element signature="e#137#146#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -385,12 +333,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>drop_out</find>
-      <find>test_acc 0.81</find>
-      <find>train action:</find>
-      <find>residual</find>
-      <find>none</find>
-      <find>test_acc 0.839</find>
       <find>save_param</find>
       <find>ev</find>
       <find>eva</find>
@@ -401,7 +343,6 @@
       <find>derive_num_sample</find>
       <find>action</find>
       <find>gcn</find>
-      <find>derive</find>
       <find>multi_label</find>
       <find>model</find>
       <find>device</find>
@@ -409,12 +350,19 @@
       <find>0.84</find>
       <find>0.83</find>
       <find>test_acc 0.82</find>
-      <find>test_acc 0.83</find>
       <find>test_acc 0.73</find>
-      <find>test_wi</find>
       <find>test_acc 0.736</find>
-      <find>train</find>
       <find>dataset</find>
+      <find>layers_of_child_model</find>
+      <find>load_path</find>
+      <find>self.shared_step</find>
+      <find>test_acc 0.83</find>
+      <find>Loss 0.3</find>
+      <find>test_wi</find>
+      <find>train</find>
+      <find>run_model</find>
+      <find>derive</find>
+      <find>path</find>
     </findStrings>
     <replaceStrings>
       <replace>retrain_epochs=150</replace>
@@ -440,7 +388,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/geometrics/results/ppi_results.txt" />
         <option value="$PROJECT_DIR$/nas_module/nas_net_with_skip_conn.py" />
         <option value="$PROJECT_DIR$/geometrics/nas_init.py" />
         <option value="$PROJECT_DIR$/geometrics/net_skip_conn.py" />
@@ -463,9 +410,7 @@
         <option value="$PROJECT_DIR$/attention_module/attention_finalize.py" />
         <option value="$PROJECT_DIR$/models/__init__.py" />
         <option value="$PROJECT_DIR$/utils.py" />
-        <option value="$PROJECT_DIR$/models/model_utils.py" />
         <option value="$PROJECT_DIR$/DockerFile" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/run_command" />
         <option value="$PROJECT_DIR$/eval/eval_citation.py" />
         <option value="$PROJECT_DIR$/models/geo/MessagePassing.py" />
@@ -483,14 +428,17 @@
         <option value="$PROJECT_DIR$/models/geo/geo_gnn.py" />
         <option value="$PROJECT_DIR$/models/gnn_manager.py" />
         <option value="$PROJECT_DIR$/models/gnn_ppi_manager.py" />
-        <option value="$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py" />
         <option value="$PROJECT_DIR$/eval/eval_geo_ppi.py" />
         <option value="$PROJECT_DIR$/models/geo/geo_layer.py" />
         <option value="$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py" />
-        <option value="$PROJECT_DIR$/models/gnn_citation_manager.py" />
         <option value="$PROJECT_DIR$/eval/eval_geo_citation.py" />
-        <option value="$PROJECT_DIR$/trainer.py" />
+        <option value="$PROJECT_DIR$/models/gnn_citation_manager.py" />
+        <option value="$PROJECT_DIR$/models/model_utils.py" />
+        <option value="$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py" />
         <option value="$PROJECT_DIR$/main.py" />
+        <option value="$PROJECT_DIR$/trainer.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/citetion_result.txt" />
       </list>
     </option>
   </component>
@@ -501,7 +449,6 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1440" />
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -518,11 +465,6 @@
             <path>
               <item name="GraphNAS-simple" type="b2602c69:ProjectViewProjectNode" />
               <item name="GraphNAS-simple" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="GraphNAS-simple" type="b2602c69:ProjectViewProjectNode" />
-              <item name="GraphNAS-simple" type="462c0819:PsiDirectoryNode" />
-              <item name="eval" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="GraphNAS-simple" type="b2602c69:ProjectViewProjectNode" />
@@ -732,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1554298970886</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="version 1.2, add pytorch-geometrics implements.">
+      <created>1554950899488</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1554950899488</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -768,7 +717,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1439" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4970297" visible="true" weight="0.28826895" />
       <window_info id="Structure" order="1" sideWeight="0.50174826" side_tool="true" weight="0.25822604" />
@@ -781,7 +730,32 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32866243" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" visible="true" weight="0.3299363" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
+      <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49926686" weight="0.32356688" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50143063" side_tool="true" weight="0.41528663" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" visible="true" weight="0.41528663" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.29808918" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" />
+      <window_info anchor="right" id="SciView" order="4" weight="0.3297568" />
+      <window_info anchor="right" id="Database" order="5" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4970297" visible="true" weight="0.28826895" />
+      <window_info id="Structure" order="1" sideWeight="0.50174826" side_tool="true" weight="0.25822604" />
+      <window_info id="Favorites" order="2" sideWeight="0.5029703" side_tool="true" weight="0.21244635" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3299363" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49853373" visible="true" weight="0.37707007" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.36433122" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32866243" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49926686" weight="0.32356688" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50073314" side_tool="true" weight="0.32738853" />
@@ -793,10 +767,36 @@
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info anchor="right" id="SciView" order="4" weight="0.3297568" />
       <window_info anchor="right" id="Database" order="5" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -841,16 +841,6 @@
           <option name="timeStamp" value="59" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py</url>
-          <line>33</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="67" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py</url>
           <line>129</line>
           <option name="timeStamp" value="73" />
@@ -865,11 +855,20 @@
           <line>120</line>
           <option name="timeStamp" value="75" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/trainer.py</url>
+          <line>318</line>
+          <option name="timeStamp" value="76" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/trainer.py</url>
+          <line>323</line>
+          <option name="timeStamp" value="77" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/models/random_search.py" />
     <entry file="file://$PROJECT_DIR$/models/shared_gcn.py" />
     <entry file="file://$PROJECT_DIR$/test_script/Test0312.py" />
     <entry file="file://$PROJECT_DIR$/nas_module/nas_layer.py" />
@@ -906,16 +905,6 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="264">
-            <caret line="12" selection-start-line="12" selection-end-line="12" />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1055,29 +1044,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/model_utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="76" column="4" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eval/ppi.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="27" column="49" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="49" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/gnn_ppi_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1306">
-          <caret line="169" lean-forward="true" selection-start-line="169" selection-end-line="169" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1106,13 +1078,6 @@
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/-662150009/torch/nn/modules/module.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="488" selection-start-line="488" selection-end-line="488" />
         </state>
       </provider>
     </entry>
@@ -1154,16 +1119,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/gnn_citation_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-52">
-          <caret line="104" column="27" selection-start-line="104" selection-start-column="27" selection-end-line="104" selection-end-column="27" />
-          <folding>
-            <element signature="e#137#146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eval/eval_geo_citation.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-277">
@@ -1174,60 +1129,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/requirements.txt">
+    <entry file="file://$USER_HOME$/Library/Caches/PyCharm2018.2/remote_sources/-190824161/-662150009/torch/nn/modules/module.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="16" lean-forward="true" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        <state relative-caret-position="142">
+          <caret line="768" selection-start-line="768" selection-end-line="768" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DockerFile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
-          <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py">
+    <entry file="file://$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="57" selection-start-line="57" selection-end-line="57" />
+        <state relative-caret-position="272">
+          <caret line="57" column="12" selection-start-line="57" selection-start-column="12" selection-end-line="57" selection-end-column="12" />
           <folding>
             <element signature="e#0#21#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py">
+    <entry file="file://$PROJECT_DIR$/models/model_utils.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2981">
-          <caret line="139" selection-start-line="139" selection-end-line="139" />
+        <state relative-caret-position="276">
+          <caret line="36" column="8" selection-start-line="36" selection-start-column="8" selection-end-line="36" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/requirements.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/geo/geo_gnn_citation_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#12#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn_citation_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2626">
+          <caret line="243" selection-start-line="243" selection-end-line="245" selection-end-column="21" />
+          <folding>
+            <element signature="e#137#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/trainer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="124">
-          <caret line="75" column="60" selection-start-line="75" selection-start-column="60" selection-end-line="75" selection-end-column="60" />
+        <state relative-caret-position="516">
+          <caret line="254" column="58" selection-start-line="254" selection-start-column="58" selection-end-line="254" selection-end-column="58" />
           <folding>
             <element signature="e#0#11#0" expanded="true" />
+            <marker date="1555041624139" expanded="true" signature="8470:9026" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn_ppi_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1306">
+          <caret line="169" selection-start-line="169" selection-end-line="169" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="29" column="36" selection-start-line="29" selection-start-column="36" selection-end-line="29" selection-end-column="36" />
+        <state relative-caret-position="-339">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="27" selection-end-line="22" selection-end-column="48" />
           <folding>
             <element signature="e#20#35#0" expanded="true" />
-            <marker date="1554950560882" expanded="true" signature="3535:3719" ph="..." />
+            <marker date="1554967780786" expanded="true" signature="3605:3867" ph="..." />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="263">
+            <caret line="54" selection-start-line="54" selection-end-line="54" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/citetion_result.txt">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

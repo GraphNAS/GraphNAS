@@ -20,6 +20,7 @@ def build_args():
     parser.add_argument('--save_epoch', type=int, default=5)
     parser.add_argument('--max_save_num', type=int, default=5)
     # controller
+    parser.add_argument('--layers_of_child_model', type=int, default=3)
     parser.add_argument('--shared_initial_step', type=int, default=0)
     parser.add_argument('--batch_size', type=int, default=64)
     parser.add_argument('--entropy_mode', type=str, default='reward', choices=['reward', 'regularizer'])
@@ -43,7 +44,7 @@ def build_args():
     parser.add_argument('--derive_num_sample', type=int, default=100)
 
     # child model
-    parser.add_argument("--dataset", type=str, default="Pubmed", required=False,
+    parser.add_argument("--dataset", type=str, default="Cora", required=False,
                         help="The input dataset.")
     parser.add_argument("--epochs", type=int, default=200,
                         help="number of training epochs")
@@ -71,6 +72,8 @@ def build_args():
 def build_args_for_ppi():
     args = build_args()
     args.dataset = "PPI"
+    if args.layers_of_child_model < 3:
+        args.layers_of_child_model = 3
     args.in_feats = 50
     args.num_class = 121
     args.in_drop = 0
@@ -96,8 +99,6 @@ def main(args):  # pylint:disable=redefined-outer-name
         print(args)
         trnr.train()
     elif args.mode == 'derive':
-        assert args.load_path != "", ("`--load_path` should be given in "
-                                      "`derive` mode")
         trnr.derive()
     else:
         raise Exception(f"[!] Mode not found: {args.mode}")
