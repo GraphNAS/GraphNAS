@@ -2,33 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9cf24a45-da5f-4c3b-9459-2b139ba6515f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README.zh.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eval/eval_ppi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/eval/pyg/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/random_search.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/results/extractFromResult.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.en.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/citation.npy" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/citetion_result.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/eval_citation.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval/eval_citation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/eval_geo_citation.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval/pyg/eval_geo_citation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/eval_geo_ppi.py" beforeDir="false" afterPath="$PROJECT_DIR$/eval/pyg/eval_geo_ppi.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/gat.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/gatWithGeoLayer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/eval/ppi.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/geo/geo_gnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/geo/geo_gnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/geo/geo_layer.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/geo/geo_layer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/gnn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/gnn_citation_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/gnn_citation_manager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/gnn_ppi_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/gnn_ppi_manager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run_command" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -228,7 +202,7 @@
           <entry key="md" value="7" />
           <entry key="pooling_dim_128" value="2" />
           <entry key="pooling_dim_64" value="2" />
-          <entry key="py" value="217" />
+          <entry key="py" value="219" />
           <entry key="run_command" value="4" />
           <entry key="structure1_without_batch_normal" value="2" />
           <entry key="txt" value="31" />
@@ -238,7 +212,7 @@
         <counts>
           <entry key="Markdown" value="7" />
           <entry key="PLAIN_TEXT" value="54" />
-          <entry key="Python" value="217" />
+          <entry key="Python" value="219" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -250,13 +224,13 @@
           <entry key="md" value="633" />
           <entry key="py" value="8165" />
           <entry key="run_command" value="28" />
-          <entry key="txt" value="226" />
+          <entry key="txt" value="229" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="633" />
-          <entry key="PLAIN_TEXT" value="475" />
+          <entry key="PLAIN_TEXT" value="478" />
           <entry key="Python" value="8818" />
         </counts>
       </usages-collector>
@@ -293,7 +267,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="695">
@@ -302,13 +276,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="1011">
               <caret line="58" column="4" selection-start-line="58" selection-start-column="4" selection-end-line="58" selection-end-column="4" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/gnn.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1760">
+              <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#31#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/models/gnn_ppi_manager.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-7467">
+              <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+              <folding>
+                <element signature="e#0#15#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -340,15 +338,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="88">
               <caret line="4" column="16" lean-forward="true" selection-start-line="4" selection-start-column="16" selection-end-line="4" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/results/results.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="66" />
             </state>
           </provider>
         </entry>
@@ -449,7 +438,6 @@
         <option value="$PROJECT_DIR$/DockerFile" />
         <option value="$PROJECT_DIR$/models/geo/random_search.py" />
         <option value="$PROJECT_DIR$/results/extractFromResult.py" />
-        <option value="$PROJECT_DIR$/models/gnn.py" />
         <option value="$PROJECT_DIR$/models/geo/geo_gnn_ppi_manager.py" />
         <option value="$PROJECT_DIR$/results/random_retrain.txt" />
         <option value="$PROJECT_DIR$/results/nas_retrain1.txt" />
@@ -458,7 +446,6 @@
         <option value="$PROJECT_DIR$/results/best_structure_on_dgl/pooling_dim_128" />
         <option value="$PROJECT_DIR$/results/best_structure_on_dgl/first_sc_128" />
         <option value="$PROJECT_DIR$/results/best_structure_on_dgl/batch_norm" />
-        <option value="$PROJECT_DIR$/models/gnn_ppi_manager.py" />
         <option value="$PROJECT_DIR$/results/graphnas_result/sturcutre1.txt" />
         <option value="$PROJECT_DIR$/eval/gat.py" />
         <option value="$PROJECT_DIR$/results/graphnas_result/structure2.txt" />
@@ -482,6 +469,8 @@
         <option value="$PROJECT_DIR$/random_search.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/eval/pyg.py" />
+        <option value="$PROJECT_DIR$/models/gnn.py" />
+        <option value="$PROJECT_DIR$/models/gnn_ppi_manager.py" />
       </list>
     </option>
   </component>
@@ -915,7 +904,14 @@
       <option name="project" value="LOCAL" />
       <updated>1555324976271</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add ppi support.">
+      <created>1555661360229</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555661360229</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -952,6 +948,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4970297" visible="true" weight="0.29256082" />
       <window_info id="Structure" order="1" sideWeight="0.50174826" side_tool="true" weight="0.25822604" />
@@ -962,13 +959,13 @@
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49928468" weight="0.34457833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32866243" />
+      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3299363" />
       <window_info anchor="bottom" id="File Transfer" order="9" sideWeight="0.49926686" weight="0.32356688" />
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50214595" side_tool="true" weight="0.37707007" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" visible="true" weight="0.41445783" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4985694" weight="0.41445783" />
       <window_info anchor="bottom" id="Python Console" order="13" sideWeight="0.4985694" weight="0.29808918" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -1040,7 +1037,8 @@
     <MESSAGE value="version 1.1 fix bug on linux." />
     <MESSAGE value="version 1.2, add pytorch-geometrics implements." />
     <MESSAGE value="add pytorch-geometrics support." />
-    <option name="LAST_COMMIT_MESSAGE" value="add pytorch-geometrics support." />
+    <MESSAGE value="add ppi support." />
+    <option name="LAST_COMMIT_MESSAGE" value="add ppi support." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1263,30 +1261,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/models/gnn.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-266">
-          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/models/model_utils.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="222">
           <caret line="43" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/gnn_ppi_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1497,13 +1475,6 @@
     <entry file="file://$PROJECT_DIR$/run_command">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="695">
-          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eval/pyg.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1524,6 +1495,33 @@
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1760">
+          <caret line="80" column="50" selection-start-line="80" selection-start-column="50" selection-end-line="80" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/models/gnn_ppi_manager.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-7467">
+          <caret line="96" column="29" selection-start-line="96" selection-start-column="29" selection-end-line="96" selection-end-column="29" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="695">
+          <caret line="121" column="16" selection-start-line="121" selection-start-column="16" selection-end-line="121" selection-end-column="16" />
         </state>
       </provider>
     </entry>

@@ -96,30 +96,6 @@ class PPIGCN(GNNManager):
                     new_state_dict['param_groups'][0]['params'].append(param)
         return new_state_dict
 
-    # 加载优化器
-    def load_optimizer(self, optimizer):
-        filename = self.args.optim_file
-        if os.path.exists(filename):
-            shared_state_dict = torch.load(filename)
-            new_state_dict = self._merge_optimizer(optimizer.state_dict(), shared_state_dict)
-            optimizer.load_state_dict(new_state_dict)
-            # optimizer.__setstate__({'state':shared_state_dict['state'],'param_groups':shared_state_dict['param_groups']})
-        else:
-            pass
-        return optimizer
-
-    # 保存优化器
-    def save_optimizer(self, optimizer):
-        filename = self.args.optim_file
-
-        if os.path.exists(filename):
-            state_dict = torch.load(filename)
-            state_dict = self._merge_optimizer(state_dict, optimizer.state_dict(), merge=True)
-        else:
-            state_dict = optimizer.state_dict()
-        torch.save(state_dict, filename)
-        return optimizer
-
     def save_param(self, model, update_all=False):
         if hasattr(self.args, "share_param"):
             if not self.args.share_param:
@@ -342,7 +318,7 @@ class PPIGCN(GNNManager):
                 print(e)
             else:
                 raise e
-            val_loss, val_f1 = 0, 0  # TODO Loss need to be set
+            val_loss, val_f1 = 0, 0
         del model
         torch.cuda.empty_cache()
         return val_loss, val_f1

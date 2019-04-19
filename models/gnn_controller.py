@@ -38,15 +38,6 @@ def _construct_action(actions, state_space, skip_conn=False):
 
 
 class GNNNASController(torch.nn.Module):
-    """Based on
-    https://github.com/pytorch/examples/blob/master/word_language_model/model.py
-
-    TODO(brendan): RL controllers do not necessarily have much to do with
-    language models.
-
-    Base the controller RNN on the GRU from:
-    https://github.com/ikostrikov/pytorch-a2c-ppo-acktr/blob/master/model.py
-    """
 
     def __init__(self, args, num_layers=3, skip_conn=False, controller_hid=100, cuda=True, mode="train",
                  softmax_temperature=5.0, tanh_c=2.5):
@@ -95,8 +86,6 @@ class GNNNASController(torch.nn.Module):
                 decoder = torch.nn.Linear(controller_hid, size)
                 self.decoders.append(decoder)
         else:
-            # TODO share decoder for same actions
-            # TODO Test1
 
             state_decoder = []  # shared decoder
             for idx, size in enumerate(state_space_length):
@@ -187,15 +176,13 @@ class GNNNASController(torch.nn.Module):
 
             probs = F.softmax(logits, dim=-1)
             log_prob = F.log_softmax(logits, dim=-1)
-            # TODO(brendan): .mean() for entropy?
+
             entropy = -(log_prob * probs).sum(1, keepdim=False)
 
             action = probs.multinomial(num_samples=1).data
             selected_log_prob = log_prob.gather(
                 1, utils.get_variable(action, requires_grad=False))
 
-            # TODO(brendan): why the [:, 0] here? Should it be .squeeze(), or
-            # .view()? Same below with `action`.
             entropies.append(entropy)
             log_probs.append(selected_log_prob[:, 0])
 

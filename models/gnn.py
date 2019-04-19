@@ -162,7 +162,7 @@ class NASLayer(nn.Module):
         self.prp = nn.ModuleList()
         self.red = nn.ModuleList()
         self.fnl = nn.ModuleList()
-        self.agg = nn.ModuleList()  # TODO 可能会存在问题，出现问题改为list
+        self.agg = nn.ModuleList()
         for hid in range(self.num_heads):
             # due to multi-head, the in_dim = num_hidden * num_heads
             self.prp.append(AttentionPrepare(in_channels, out_channels, self.attention_dim, dropout))
