@@ -61,10 +61,17 @@ class GeoPPIManager(GNNManager):
         if osp.exists(self.param_file):
             self.shared_params = torch.load(self.param_file)
 
+    def save_param(self, model, update_all=False):
+        if hasattr(self.args, "share_param"):
+            if not self.args.share_param:
+                return
+        model.cpu()
+        if isinstance(model, GraphNet):
+            self.shared_params = model.get_param_dict(self.shared_params, update_all)
+        torch.save(self.shared_params, self.param_file)
+
     def train(self, actions, format="two"):
-        # torch.manual_seed(self.args.random_seed)
-        # if self.args.cuda:
-        #     torch.cuda.manual_seed(self.args.random_seed)
+
         actions = process_action(actions, format, self.args)
         model = self.build_gnn(actions)
         print("train action:", actions)

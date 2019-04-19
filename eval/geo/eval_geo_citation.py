@@ -1,10 +1,17 @@
 import argparse
-import time
+import os.path as osp
 
 import torch
+import torch.nn.functional as F
+import torch_geometric.transforms as T
+from torch_geometric.datasets import Planetoid
 
+from models.geo.geo_gnn import GraphNet
 # sys.path.extend(['/GraphNAS'])
-from models.gnn_citation_manager import CitationGNNManager
+from models.gnn_citation_manager import CitationGNNManager, process_action
+from models.geo.geo_gnn_citation_manager import GeoCitationManagerManager
+torch.manual_seed(123)
+torch.cuda.manual_seed_all(123)
 
 
 def build_args():
@@ -13,11 +20,11 @@ def build_args():
     parser.add_argument("--cuda", type=bool, default=True, required=False,
                         help="run in cuda mode")
     # child model
-    parser.add_argument("--dataset", type=str, default="cora", required=False,
+    parser.add_argument("--dataset", type=str, default="Cora", required=False,
                         help="The input dataset.")
-    parser.add_argument("--epochs", type=int, default=200,
+    parser.add_argument("--epochs", type=int, default=300,
                         help="number of training epochs")
-    parser.add_argument("--retrain_epochs", type=int, default=200,
+    parser.add_argument("--retrain_epochs", type=int, default=300,
                         help="number of training epochs")
     parser.add_argument("--multi_label", type=bool, default=False,
                         help="multi_label or single_label task")
@@ -38,19 +45,9 @@ def build_args():
     return args
 
 
-def eval_actions(actions, run_random=False):
-    args = build_args()
-    if run_random:
-        args.random_seed = time.time()
-
-    self = CitationGNNManager(args)
-    self.train(actions)
-
-
 if __name__ == "__main__":
-
-    # actions   ATT     ATT     ACT    K  DIM  ATT     ATT     ACT     K  DIM
-    actions = ['none', 'sum', 'relu6', 2, 128, 'gat', 'sum', 'linear', 2, 7]
+    actions = ['gat', 'sum', 'elu', 8, 8, 'gat', 'sum', 'elu', 1, 7]
+    args = build_args()
+    manager = GeoCitationManagerManager(args)
     for i in range(20):
-        eval_actions(actions, run_random=True)
-
+        manager.train(actions)

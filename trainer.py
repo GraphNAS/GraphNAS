@@ -8,9 +8,9 @@ from torch import nn
 
 import models
 import utils
-from models.geo.geo_gnn_citation_manager import GeoCitationManager
+from models.geo.geo_gnn_citation_manager import GeoCitationManagerManager
 from models.geo.geo_gnn_ppi_manager import GeoPPIManager
-from models.gnn_citation_manager import CitationGNN
+from models.gnn_citation_manager import CitationGNNManager
 
 logger = utils.get_logger()
 
@@ -74,12 +74,12 @@ class Trainer(object):
             pass
 
         if self.args.dataset in ["cora", "citeseer", "pubmed"]:
-            self.shared = CitationGNN(self.args)
+            self.shared = CitationGNNManager(self.args)
             self.controller = models.GNNNASController(self.args, cuda=self.args.cuda,
                                                       num_layers=self.args.layers_of_child_model)
 
         if self.args.dataset in ["Cora", "Citeseer", "Pubmed"]:
-            self.shared = GeoCitationManager(self.args)
+            self.shared = GeoCitationManagerManager(self.args)
             self.controller = models.GNNNASController(self.args, cuda=self.args.cuda,
                                                       num_layers=self.args.layers_of_child_model)
 

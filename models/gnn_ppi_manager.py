@@ -51,10 +51,10 @@ def build_args():
     return args
 
 
-class PPIGCN(GNNManager):
+class PPIGNN(GNNManager):
 
     def __init__(self, args):
-        super(PPIGCN, self).__init__(args)
+        super(PPIGNN, self).__init__(args)
 
         self.group_feats, self.group_edge, self.group_labels, self.group_graphs = load_data("new_ppi.npy")
         self.early_stop_manager = EarlyStop(10)

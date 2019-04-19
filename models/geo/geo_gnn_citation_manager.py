@@ -9,7 +9,7 @@ import torch_geometric.transforms as T
 from torch_geometric.datasets import Planetoid
 
 from models.geo.geo_gnn import GraphNet
-from models.gnn_citation_manager import CitationGNN, evaluate
+from models.gnn_citation_manager import CitationGNNManager, evaluate
 
 
 def load_data(dataset="Cora"):
@@ -18,9 +18,9 @@ def load_data(dataset="Cora"):
     return dataset[0]
 
 
-class GeoCitationManager(CitationGNN):
+class GeoCitationManagerManager(CitationGNNManager):
     def __init__(self, args):
-        super(GeoCitationManager, self).__init__(args)
+        super(GeoCitationManagerManager, self).__init__(args)
 
         self.data = load_data(args.dataset)
         self.args.in_feats = self.in_feats = self.data.num_features

@@ -29,15 +29,15 @@ def load(args, save_file=".npy"):
 
 
 def evaluate(output, labels, mask):
-    # with torch.no_grad():
     _, indices = torch.max(output, dim=1)
     correct = torch.sum(indices[mask] == labels[mask])
     return correct.item() * 1.0 / mask.sum().item()
 
 
-class CitationGNN(object):
+# manager the train process of GNN on citation dataset
+class CitationGNNManager(object):
 
-    def __init__(self, args, data_function=None):
+    def __init__(self, args):
 
         self.args = args
 
@@ -66,30 +66,21 @@ class CitationGNN(object):
         self.loss_fn = torch.nn.functional.nll_loss
 
     def load_param(self):
-        if hasattr(self.args, "share_param"):
-            if not self.args.share_param:  # 不共享参数
-                return
-        if os.path.exists(self.param_file):
-            self.shared_params = torch.load(self.param_file)
+        # don't share param
+        pass
 
     def save_param(self, model, update_all=False):
-        if hasattr(self.args, "share_param"):
-            if not self.args.share_param:
-                return
-        model.cpu()
-        if isinstance(model, GraphNet):
-            self.shared_params = model.get_param_dict(self.shared_params, update_all)
-        torch.save(self.shared_params, self.param_file)
+        # don't share param
+        pass
 
-    def train(self, actions=None, dataset="cora", format="two"):
+    # train from scratch
+    def train(self, actions=None, format="two"):
         actions = process_action(actions, format, self.args)
         print("train action:", actions)
 
         # create model
         model = self.build_gnn(actions)
 
-        # share params
-        # model.load_param(self.shared_params)
         if self.args.cuda:
             model.cuda()
 
@@ -124,69 +115,11 @@ class CitationGNN(object):
                          batch_normal=False)
         return model
 
-    def evaluate(self, actions=None, dataset="cora", format="two"):
-        if self.args.cuda:
-            torch.cuda.empty_cache()
-        # without random seed
-        # torch.manual_seed(123)
-        # torch.cuda.manual_seed_all(123)
-        actions = process_action(actions, format, self.args)
-        print("train action:", actions)
-
-        # create model
-        model = self.build_gnn(actions)
-        if self.args.cuda:
-            model.cuda()
-        total = sum([param.nelement() for param in model.parameters()])
-        print(total)
-        # use optimizer
-        optimizer = torch.optim.Adam(model.parameters(), lr=self.args.lr, weight_decay=self.args.weight_decay)
-        try:
-            model, val_acc, best_test_acc = self.run_model(model, optimizer, self.loss_fn, self.data, self.epochs,
-                                                           half_stop_score=max(
-                                                               self.reward_manager.get_top_average() * 0.7, 0.4),
-                                                           return_best=True, cuda=self.args.cuda)
-        except RuntimeError as e:
-            if "cuda" in str(e):
-                print(e)
-                val_acc = 0
-            else:
-                raise e
-
-        return best_test_acc
-
     def retrain(self, actions, format="two"):
-        torch.manual_seed(self.args.random_seed)
-        if self.args.cuda:
-            torch.cuda.empty_cache()
-            torch.cuda.manual_seed_all(self.args.random_seed)
-        actions = process_action(actions, format, self.args)
-        print("retrain action:", actions)
+        return self.train(actions, format)
 
-        # create model
-        model = self.build_gnn(actions)
-        if self.args.cuda:
-            model.cuda()
-
-        # use optimizer
-        optimizer = torch.optim.Adam(model.parameters(), lr=self.args.lr, weight_decay=self.args.weight_decay)
-
-        # different from train
-        try:
-            model, val_acc = self.run_model(model, optimizer, self.loss_fn, self.data, self.epochs, cuda=self.args.cuda,
-                                            half_stop_score=max(self.reward_manager.get_top_average() * 0.7, 0.4))
-        except RuntimeError as e:
-            if "cuda" in str(e):
-                print(e)
-                val_acc = 0
-            else:
-                raise e
-        reward = self.reward_manager.get_reward(val_acc)
-        self.save_param(model, update_all=(reward > 0))
-        return reward, val_acc
-
-    def test_with_param(self, actions=None, dataset="cora", format="two", with_retrain=True):
-        return self.train(actions, dataset, format)
+    def test_with_param(self, actions=None, format="two"):
+        return self.train(actions, format)
 
     @staticmethod
     def run_model(model, optimizer, loss_fn, data, epochs, early_stop=5, tmp_model_file="citation_testing_2.pkl",
@@ -196,23 +129,21 @@ class CitationGNN(object):
         # initialize graph
         dur = []
         begin_time = time.time()
-        features, g, labels, mask, val_mask, test_mask, n_edges = CitationGNN.prepare_data(data, cuda)
+        features, g, labels, mask, val_mask, test_mask, n_edges = CitationGNNManager.prepare_data(data, cuda)
         saved = False
         best_performance = 0
         for epoch in range(1, epochs + 1):
             should_break = False
-            # i = self.train_graph_index % self.train_set_length
+            t0 = time.time()
 
             model.train()
-
-            t0 = time.time()
-            # forward
             logits = model(features, g)
             logits = F.log_softmax(logits, 1)
             loss = loss_fn(logits[mask], labels[mask])
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
+
             model.eval()
             logits = model(features, g)
             logits = F.log_softmax(logits, 1)

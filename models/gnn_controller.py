@@ -6,17 +6,16 @@ import torch.nn.functional as F
 import utils
 
 state_space = {
-    # "bn": ["yes", "no"],
     "attention_type": ["gat", "gcn", "cos", "const", "gat_sym", 'linear', 'generalized_linear'],
     'aggregator_type': ["sum", "mean", "max", "mlp", ],  # remove lstm
     'activate_function': ["sigmoid", "tanh", "relu", "linear",
                           "softplus", "leaky_relu", "relu6", "elu"],
     'number_of_heads': [1, 2, 4, 6, 8, 16],
     'hidden_units': [4, 8, 16, 32, 64, 128, 256],
-    # 'jump_knowledge_type': ['none'],
 }
 
 
+# the output of controller RNN is index, translate it into operator name
 def _construct_action(actions, state_space, skip_conn=False):
     state_length = len(state_space)
     layers = []
@@ -99,10 +98,6 @@ class GNNNASController(torch.nn.Module):
                 # common action
                 for decoder in state_decoder:
                     self.decoders.append(decoder)
-            # old version
-            # for idx, size in enumerate(self.num_tokens):
-            #     decoder = torch.nn.Linear(controller_hid, size)
-            #     self.decoders.append(decoder)
 
         self._decoders = torch.nn.ModuleList(self.decoders)
 

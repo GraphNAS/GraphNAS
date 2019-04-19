@@ -8,13 +8,12 @@ class GraphNet(torch.nn.Module):
     def __init__(self, actions, num_feat, num_label, drop_out=0.6, multi_label=False, batch_normal=True, residual=True,
                  state_num=5):
         '''
-        目前认为prediction层存在，方便加入skip-connection层
         :param actions:
         :param multi_label:
         '''
         super(GraphNet, self).__init__()
         # args
-        self.jk_type = "none"
+
         self.multi_label = multi_label
         self.num_feat = num_feat
         self.num_label = num_label
@@ -47,7 +46,6 @@ class GraphNet(torch.nn.Module):
         hidden_units_list = []
         out_channels_list = []
         for i in range(layer_nums):
-            # 提取参数
             head_num = actions[i * state_num + 3]
             out_channels = actions[i * state_num + 4]
             hidden_units_list.append(head_num * out_channels)
@@ -56,29 +54,33 @@ class GraphNet(torch.nn.Module):
         return out_channels_list[-1] == self.num_label
 
     def build_hidden_layers(self, actions, batch_normal, drop_out, layer_nums, num_feat, num_label, state_num=6):
-        num_all_out_channels = num_feat
+
         # build hidden layer
         for i in range(layer_nums):
-            # 设置输入输出维度
+
+            # compute input
             if i == 0:
                 in_channels = num_feat
             else:
                 in_channels = out_channels * head_num
-                if self.jk_type == "layer_concat":  # layer_concat 将之前的输入都concat起来，作为下一层的输入
-                    in_channels = num_all_out_channels
-            # 提取参数
+
+            # extract operator types from action
             attention_type = actions[i * state_num + 0]
             aggregator_type = actions[i * state_num + 1]
             act = actions[i * state_num + 2]
             head_num = actions[i * state_num + 3]
             out_channels = actions[i * state_num + 4]
+            # Multi-head used in GAT.
+            # "concat" is True, concat output of each head;
+            # "concat" is False, get average of each head output;
             concat = True
-            if i == layer_nums - 1 and self.jk_type == 'none':
-                concat = False
+            if i == layer_nums - 1:
+                concat = False  # The last layer get average
             else:
                 pass
+
             if i == 0:
-                residual = False and self.residual
+                residual = False and self.residual  # special setting of dgl
             else:
                 residual = True and self.residual
             self.layers.append(
@@ -99,6 +101,7 @@ class GraphNet(torch.nn.Module):
             result_lines += str(each)
         return result_lines
 
+    # map GNN's parameters into dict
     def get_param_dict(self, old_param=None, update_all=True):
         if old_param is None:
             result = {}
@@ -114,6 +117,7 @@ class GraphNet(torch.nn.Module):
                 result[key] = new_param
         return result
 
+    # load parameters from parameter dict
     def load_param(self, param):
         if param is None:
             return
@@ -125,7 +129,6 @@ class GraphNet(torch.nn.Module):
 #  Each layer of GNN
 ############################
 
-
 def gat_message(edges):
     if 'norm' in edges.src:
         msg = edges.src['ft'] * edges.src['norm']
@@ -135,21 +138,30 @@ def gat_message(edges):
 
 class NASLayer(nn.Module):
     def __init__(self, attention_type, aggregator_type, act, head_num, in_channels, out_channels=8, concat=True,
-                 negative_slope=0.2, dropout=0.6, is_sampled=False, sample_size=0, bias=True, pooling_dim=128,
-                 residual=False, batch_normal=True):
-
+                 dropout=0.6, pooling_dim=128, residual=False, batch_normal=True):
+        '''
+        build one layer of GNN
+        :param attention_type:
+        :param aggregator_type:
+        :param act: Activation function
+        :param head_num: head num, in another word repeat time of current ops
+        :param in_channels: input dimension
+        :param out_channels: output dimension
+        :param concat: concat output. get average when concat is False
+        :param dropout: dropput for current layer
+        :param pooling_dim: hidden layer dimension; set for pooling aggregator
+        :param residual: whether current layer has  skip-connection
+        :param batch_normal: whether current layer need batch_normal
+        '''
         super(NASLayer, self).__init__()
         # print("NASLayer", in_channels, concat, residual)
         self.attention_type = attention_type
         self.aggregator_type = aggregator_type
         self.act = NASLayer.act_map(act)
-        self.is_sampled = is_sampled
-        self.sample_size = sample_size
         self.in_channels = in_channels
         self.out_channels = out_channels
         self.num_heads = int(head_num)
         self.concat = concat
-        self.negative_slope = negative_slope
         self.dropout = dropout
         self.attention_dim = 1
         self.pooling_dim = pooling_dim
@@ -286,7 +298,7 @@ class NASLayer(nn.Module):
             g.ndata.update(self.prp[i](last))
             # message passing
             g.update_all(gat_message, self.red[i], self.fnl[i])
-            # merge all the heads
+        # merge all the heads
         if not self.concat:
             output = g.pop_n_repr('head0')
             for hid in range(1, self.num_heads):
@@ -294,7 +306,6 @@ class NASLayer(nn.Module):
             output = output / self.num_heads
         else:
             output = torch.cat(
-                [g.pop_n_repr('head%d' % hid) for hid in range(self.num_heads)],
-                dim=1)
+                [g.pop_n_repr('head%d' % hid) for hid in range(self.num_heads)], dim=1)
         del last
         return output
