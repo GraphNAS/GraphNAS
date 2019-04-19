@@ -27,13 +27,13 @@ def build_args():
     parser.add_argument('--entropy_coeff', type=float, default=1e-4)
     parser.add_argument('--shared_rnn_max_length', type=int, default=35)
     parser.add_argument('--load_path', type=str, default='')
-    parser.add_argument('--search_mode', type=str, choices=['enas', 'nas', 'graphnas'],
+    parser.add_argument('--search_mode', type=str, choices=['nas'],
                         default='nas')
-    parser.add_argument('--max_epoch', type=int, default=1000)
+    parser.add_argument('--max_epoch', type=int, default=200)
     # NOTE(brendan): irrelevant for actor critic.
-    parser.add_argument('--ema_baseline_decay', type=float, default=0.95)  # TODO: very important
-    parser.add_argument('--discount', type=float, default=1.0)  # TODO
-    parser.add_argument('--controller_max_step', type=int, default=5,  # TODO 50
+    parser.add_argument('--ema_baseline_decay', type=float, default=0.95)
+    parser.add_argument('--discount', type=float, default=1.0)
+    parser.add_argument('--controller_max_step', type=int, default=5,
                         help='step for controller parameters')
     parser.add_argument('--controller_optim', type=str, default='adam')
     parser.add_argument('--controller_lr', type=float, default=3.5e-4,

@@ -1,3 +1,0 @@
-docker build -t graphnas -f DockerFile .
-docker run -it -v $(pwd):/GraphNAS graphnas python main.py
-

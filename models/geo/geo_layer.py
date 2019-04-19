@@ -53,7 +53,7 @@ class GeoLayer(MessagePassing):
 
         if self.agg_type in ["mean", "max", "mlp"]:
             if pool_dim <= 0:
-                pool_dim = 64
+                pool_dim = 128
         self.pool_dim = pool_dim
         if pool_dim != 0:
             self.pool_layer = torch.nn.ModuleList()
@@ -134,25 +134,27 @@ class GeoLayer(MessagePassing):
         return neighbor
 
     def apply_attention(self, edge_index, num_nodes, x_i, x_j):
-
         if self.att_type == "gat":
             alpha = (torch.cat([x_i, x_j], dim=-1) * self.att).sum(dim=-1)
             alpha = F.leaky_relu(alpha, self.negative_slope)
 
         elif self.att_type == "gat_sym":
-            alpha = (torch.cat([x_i, x_j], dim=-1) * self.att).sum(dim=-1)
-            alpha_2 = (torch.cat([x_j, x_i], dim=-1) * self.att).sum(dim=-1)
+            wl = self.att[:, :, :self.out_channels]  # weight left
+            wr = self.att[:, :, self.out_channels:]  # weight right
+            alpha = (x_i * wl).sum(dim=-1) + (x_j * wr).sum(dim=-1)
+            alpha_2 = (x_j * wl).sum(dim=-1) + (x_i * wr).sum(dim=-1)
             alpha = F.leaky_relu(alpha, self.negative_slope) + F.leaky_relu(alpha_2, self.negative_slope)
 
         elif self.att_type == "linear":
-            alpha = (torch.cat([x_j, x_j], dim=-1) * self.att).sum(dim=-1)
+            wl = self.att[:, :, :self.out_channels]  # weight left
+            wr = self.att[:, :, self.out_channels:]  # weight right
+            al = x_j * wl
+            ar = x_j * wr
+            alpha = al.sum(dim=-1) + ar.sum(dim=-1)
             alpha = torch.tanh(alpha)
         elif self.att_type == "cos":
             wl = self.att[:, :, :self.out_channels]  # weight left
             wr = self.att[:, :, self.out_channels:]  # weight right
-            # al = x_i * wl
-            # ar = x_j * wr
-            # alpha = al * ar
             alpha = x_i * wl * x_j * wr
             alpha = alpha.sum(dim=-1)
 
@@ -164,7 +166,8 @@ class GeoLayer(MessagePassing):
             alpha = al + ar
             alpha = torch.tanh(alpha)
             alpha = self.general_att_layer(alpha)
-
+        else:
+            raise Exception("Wrong attention type:", self.att_type)
         return alpha
 
     def update(self, aggr_out):

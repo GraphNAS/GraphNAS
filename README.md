@@ -1,34 +1,46 @@
 # GraphNAS-simple
 
-GraphNAS-simple 是 GraphNAS的简化版，提供了GraphNAS运行的必备组件
-##搭建运行环境
-* 系统环境
-> pip install -r requirements.txt \
-> pip install pytorch 
-* docker
-> docker build -t graphnas -f DockerFile . \
-> docker run -it -v $(pwd):/GraphNAS graphnas python main.py
+#### Description
+GraphNAS-simple is simple version of GraphNAS, and this project Provides the necessary components for GraphNAS to run on
+citation dataset.
 
-[ood]:进入docker后，运行
+#### Installation
+Ensure that at least PyTorch 1.0.0 is installed. Then run:
+>  pip install -r requirements.txt
 
+If you want to run in docker, you can run:
+>  docker build -t graphnas -f DockerFile . \
+>  docker run -it -v $(pwd):/GraphNAS graphnas python main.py --dataset cora
 
-[ood]:**pytorch是GraphNAS的依赖库，没有将其加入requirements.txt,是因为pytorch的包较大，安装过程中容易下载出错，导致docker创建失败**
-
-##程序说明
-* |--main.py 程序入口，包含了程序需要的参数
+#### Software Architecture
+* |--main.py Program entry, contains the parameters required by the program
 * |--trainer.py 训练器，管理GraphNAS的整个搜索过程，主要管理控制器的训练
 * |--models
-* &nbsp; |--  gnn.py 利用模型描述生成GNN网络
-* &nbsp; |--  gnn_citation_manager.py 控制GNN模型的训练过程
-* &nbsp; |--  gnn_controller.py 生成GNN网络的描述
-* &nbsp; |--  operators.py 当前定义的GNN网络中的算子
+* &nbsp;&nbsp; |--  gnn.py 利用模型描述生成GNN网络
+* &nbsp;&nbsp; |--  gnn_citation_manager.py 控制GNN模型的训练过程
+* &nbsp;&nbsp; |--  gnn_controller.py 生成GNN网络的描述
+* &nbsp;&nbsp; |--  operators.py 当前定义的GNN网络中的算子
 * |--eval
-=======
 
-#### 软件架构
-软件架构说明
+#### Instructions
+
+1. xxxx
+2. xxxx
+3. xxxx
+
+#### Contribution
+
+1. Fork the repository
+2. Create Feat_xxx branch
+3. Commit your code
+4. Create Pull Request
 
 
+#### Gitee Feature
 
-
-
+1. You can use Readme\_XXX.md to support different languages, such as Readme\_en.md, Readme\_zh.md
+2. Gitee blog [blog.gitee.com](https://blog.gitee.com)
+3. Explore open source project [https://gitee.com/explore](https://gitee.com/explore)
+4. The most valuable open source project [GVP](https://gitee.com/gvp)
+5. The manual of Gitee [https://gitee.com/help](https://gitee.com/help)
+6. The most popular members  [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)

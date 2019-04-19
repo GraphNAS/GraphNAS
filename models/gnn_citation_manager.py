@@ -13,11 +13,13 @@ import torch
 import torch.nn.functional as F
 from dgl import DGLGraph
 from dgl.data import load_data
+
 from models.gnn import GraphNet
 from models.model_utils import EarlyStop, TopAverage, process_action
 
 
-def load(args, save_file="citation.npy"):
+def load(args, save_file=".npy"):
+    save_file = args.dataset + save_file
     if os.path.exists(save_file):
         return np.load(save_file).tolist()
     else:
@@ -36,21 +38,18 @@ def evaluate(output, labels, mask):
 class CitationGNN(object):
 
     def __init__(self, args, data_function=None):
-        self.data = load(args)
-        self.args = args
-        if hasattr(args, 'dataset'):
 
+        self.args = args
+
+        if hasattr(args, 'dataset') and args.dataset in ["cora", "citeserr", "pubmed"]:
+            self.data = load(args)
             self.args.in_feats = self.in_feats = self.data.features.shape[1]
             self.args.num_class = self.n_classes = self.data.num_labels
 
-        else:
-            raise Exception("args has no dataset")
         self.early_stop_manager = EarlyStop(10)
         self.reward_manager = TopAverage(10)
 
         self.args = args
-        self.in_feats = args.in_feats
-        self.n_classes = args.num_class
         self.drop_out = args.in_drop
         self.multi_label = args.multi_label
         self.lr = args.lr

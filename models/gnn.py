@@ -78,7 +78,7 @@ class GraphNet(torch.nn.Module):
             else:
                 pass
             if i == 0:
-                residual = True and self.residual  # TODO
+                residual = False and self.residual
             else:
                 residual = True and self.residual
             self.layers.append(

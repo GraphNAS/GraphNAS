@@ -54,9 +54,6 @@ class GeoPPIManager(GNNManager):
                          batch_normal=False, residual=True)
         return model
 
-    def save_param(self, model, update_all=False):
-        pass
-
     def load_param(self):
         if hasattr(self.args, "share_param"):
             if not self.args.share_param:  # 不共享参数
@@ -80,7 +77,7 @@ class GeoPPIManager(GNNManager):
             return None
 
         # share params
-        # model.load_param(self.shared_params)
+        model.load_param(self.shared_params)
 
         model.to(self.device)
         optimizer = torch.optim.Adam(model.parameters(), lr=self.lr, weight_decay=self.weight_decay)

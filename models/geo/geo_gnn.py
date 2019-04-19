@@ -14,12 +14,15 @@ class GraphNet(BaseNet):
     def __init__(self, actions, num_feat, num_label, drop_out=0.6, multi_label=False, batch_normal=True, state_num=5,
                  residual=False):
         self.residual = residual
+        self.batch_normal = batch_normal
         super(GraphNet, self).__init__(actions, num_feat, num_label, drop_out, multi_label, batch_normal, residual,
                                        state_num)
 
     def build_model(self, actions, batch_normal, drop_out, num_feat, num_label, state_num):
         if self.residual:
             self.fcs = torch.nn.ModuleList()
+        if self.batch_normal:
+            self.bns = torch.nn.ModuleList()
         self.layers = torch.nn.ModuleList()
         self.acts = []
         self.gates = torch.nn.ModuleList()
@@ -45,7 +48,8 @@ class GraphNet(BaseNet):
             concat = True
             if i == layer_nums - 1:
                 concat = False
-
+            if self.batch_normal:
+                self.bns.append(torch.nn.BatchNorm1d(in_channels, momentum=0.5))
             self.layers.append(
                 GeoLayer(in_channels, out_channels, head_num, concat, dropout=self.dropout,
                          att_type=attention_type, agg_type=aggregator_type, ))
@@ -59,12 +63,19 @@ class GraphNet(BaseNet):
     def forward(self, x, edge_index_all):
         output = x
         if self.residual:
-            for act, layer, fc in zip(self.acts, self.layers, self.fcs):
-                # output = F.dropout(output, p=self.dropout, training=self.training)
+            for i, (act, layer, fc) in enumerate(zip(self.acts, self.layers, self.fcs)):
+                output = F.dropout(output, p=self.dropout, training=self.training)
+                if self.batch_normal:
+                    output = self.bns[i](output)
+                # if i == 0:
+                #     output = act(layer(output, edge_index_all))
+                # else:
                 output = act(layer(output, edge_index_all) + fc(output))
         else:
-            for act, layer in zip(self.acts, self.layers):
+            for i, (act, layer) in enumerate(zip(self.acts, self.layers)):
                 output = F.dropout(output, p=self.dropout, training=self.training)
+                if self.batch_normal:
+                    output = self.bns[i](output)
                 output = act(layer(output, edge_index_all))
         if not self.multi_label:
             output = F.log_softmax(output, dim=1)
@@ -97,16 +108,29 @@ class GraphNet(BaseNet):
             else:
                 result[key] = new_param
         if self.residual:
-            result["fcs"] = self.fcs
+            for i, fc in enumerate(self.fcs):
+                key = f"layer_{i}_fc_{fc.weight.size(0)}_{fc.weight.size(1)}"
+                result[key] = self.fcs[i]
+        if self.batch_normal:
+            for i, bn in enumerate(self.bns):
+                key = f"layer_{i}_fc_{bn.weight.size(0)}"
+                result[key] = self.bns[i]
         return result
 
     def load_param(self, param):
         if param is None:
             return
+
         for i in range(self.layer_nums):
             self.layers[i].load_param(param["layer_%d" % i])
-        if self.residual and "fcs" in param:
-            fcs = param["fcs"]
-            for i, fc in enumerate(fcs):
-                if self.fcs[i].weight.size() == fc.weight.size():
-                    self.fcs[i] = fc
+
+        if self.residual:
+            for i, fc in enumerate(self.fcs):
+                key = f"layer_{i}_fc_{fc.weight.size(0)}_{fc.weight.size(1)}"
+                if key in param:
+                    self.fcs[i] = param[key]
+        if self.batch_normal:
+            for i, bn in enumerate(self.bns):
+                key = f"layer_{i}_fc_{bn.weight.size(0)}"
+                if key in param:
+                    self.bns[i] = param[key]
