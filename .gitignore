@@ -116,7 +116,7 @@ dmypy.json
 
 # Pycharm config
 .idea/
-.DS_Store
+*.DS_Store
 
-results/
+results/*
 random_search.py

@@ -21,7 +21,11 @@ If you want to run in docker, you can run:
 * &nbsp;&nbsp; |--  gnn_controller.py Use RNN generate GNN descriptions. Train RNN according to reward.
 * &nbsp;&nbsp; |--  operators.py Operators in current search space.
 * &nbsp;&nbsp; |--  gnn_ppi_manager.py Manage the training process of GNN on ppi dataset.
-* |--eval
+* &nbsp;&nbsp; |--  geo GraphNAS implemented by pytorch-geometric. GNN implemented by PYG still has difference from GNN implemented by dgl. 
+* |--eval 
+* &nbsp;&nbsp; |--  eval_citation.py script for evaluate models designed by GraphNAS on Cora. 
+* &nbsp;&nbsp; |--  eval_ppi.py script for evaluate models designed by GraphNAS on ppi. 
+* &nbsp;&nbsp; |--  geo  script for evaluate models implemented by pytorch-geometric 
 
 #### Instructions
 
