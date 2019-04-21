@@ -120,3 +120,4 @@ dmypy.json
 
 results/*
 random_search.py
+eval/*

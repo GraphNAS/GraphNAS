@@ -4,6 +4,8 @@
 GraphNAS-simple is simple version of GraphNAS, and this project Provides the necessary components for GraphNAS to run on
 citation dataset.
 
+A simple illustration of GraphNAS. A recurrent network (the upper part) generates descriptions of graph neural architectures (the lower part), and then the validation results of the generated GNNs are used as feedback of the recurrent network (the upper part) to maximize the expected accuracy of the generated graph neural architecture (the lower part). The actions showed in current picture is not complete.
+![A simple illustration of GraphNAS](./images/GraphNAS.png)
 #### Installation
 Ensure that at least PyTorch 1.0.0 is installed. Then run:
 >  pip install -r requirements.txt
@@ -27,6 +29,6 @@ If you want to run in docker, you can run:
 * &nbsp;&nbsp; |--  eval_ppi.py script for evaluate models designed by GraphNAS on ppi. 
 * &nbsp;&nbsp; |--  geo  script for evaluate models implemented by pytorch-geometric 
 
-#### Instructions
+
 
 
