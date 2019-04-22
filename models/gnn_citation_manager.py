@@ -118,7 +118,7 @@ class CitationGNNManager(object):
     def retrain(self, actions, format="two"):
         return self.train(actions, format)
 
-    def test_with_param(self, actions=None, format="two"):
+    def test_with_param(self, actions=None, format="two", with_retrain=False):
         return self.train(actions, format)
 
     @staticmethod
