@@ -207,7 +207,7 @@ class NASLayer(nn.Module):
             return GATReduce(attn_drop, aggregator)
         elif attention_type == "cos":
             return CosReduce(attn_drop, aggregator)
-        elif attention_type == "none":
+        elif attention_type in ["none", "const"]:
             return ConstReduce(attn_drop, aggregator)
         elif attention_type == "gat_sym":
             return GatSymmetryReduce(attn_drop, aggregator)
