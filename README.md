@@ -28,6 +28,18 @@ If you want to run in docker, you can run:
 * &nbsp;&nbsp; |--  eval_ppi.py script for evaluate models designed by GraphNAS on ppi. 
 * &nbsp;&nbsp; |--  geo  script for evaluate models implemented by pytorch-geometric 
 
+#### Citation
+Please cite our paper if you use this code or data in your own work:[GraphNAS: Graph Neural Architecture Search with Reinforcement Learning](https://arxiv.org/abs/1904.09981)
+```
+@article{Gao2019GraphNASGN,
+  title={GraphNAS: Graph Neural Architecture Search with Reinforcement Learning},
+  author={Yang Gao and Hong Yang and Peng Zhang and Chuan Zhou and Yue Hu},
+  journal={CoRR},
+  year={2019},
+  volume={abs/1904.09981}
+}
+```
+
 
 
 
