@@ -104,15 +104,15 @@ the architecture G-Citeseer designed by GraphNAS on  Citeseer is [0, identity, 0
 the architecture G-Pubmed designed by GraphNAS on  Pubmed is [1, gat8, 0, arma, tanh, concat]. 
 
 ##### Searching for new architectures
-To carry out architecture search using search space described in Section 3.2, run
+To carry out architecture search to design entire graph neural architecture using search space described in Section 3.2, run
 
     python -m models.common.common_main --dataset Citeseer
 
-To carry out architecture search using search space described in Section 3.4, run
+To carry out architecture search to design single single architecture layer using search space described in Section 3.4, run
     
-    python -m models.micro_nas.micro_main --dataset Citeseer 
+    python -m models.micro_nas.micro_main --dataset Citeseer --supervised True
 
-
+Be aware that different runs would end up with different local minimum.
 
 #### Acknowledgements
 This repo is modified based on [DGL](https://github.com/dmlc/dgl) and [PYG](https://github.com/rusty1s/pytorch_geometric).

@@ -11,7 +11,7 @@ torch.cuda.manual_seed_all(123)
 
 if __name__ == "__main__":
     args = build_args()
-    args.supervise = True
+    args.supervised = True
     gnn_list = [
         {0: {'conv_type': 'gat_1', 'out_dim': 256}, 1: {'conv_type': 'sage', 'out_dim': 7}},
         {0: {'conv_type': 'arma', 'out_dim': 32}, 1: {'conv_type': 'arma', 'out_dim': 6}},

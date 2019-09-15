@@ -14,11 +14,11 @@ if torch.cuda.is_available():
     torch.cuda.manual_seed(seed)
 
 
-def load_data(dataset="Cora", supervise=True, ):
+def load_data(dataset="Cora", supervised=True, ):
     '''
-    support semi-supervise and supervise
+    support semi-supervised and supervised
     :param dataset:
-    :param supervise:
+    :param supervised:
     :return:
     '''
     path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'data', dataset)
@@ -29,7 +29,7 @@ def load_data(dataset="Cora", supervise=True, ):
     elif dataset in ["Cora", "Citeseer", "Pubmed"]:
         dataset = Planetoid(path, dataset, T.NormalizeFeatures())
     data = dataset[0]
-    if supervise:
+    if supervised:
 
         data.train_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
         data.train_mask[:-1000] = 1
@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     dataset_list = ["CS", "Physics", "Computers", "Photo"] #
     for dataset_name in dataset_list:
-        dataset = load_data(dataset_name, supervise=True)
+        dataset = load_data(dataset_name, supervised=True)
         best = fmin(
             fn=f,
             space=space,

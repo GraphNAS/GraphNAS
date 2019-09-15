@@ -12,8 +12,8 @@ from models.common.common_main import register_default_args
 def build_args():
     parser = argparse.ArgumentParser(description='GraphNAS')
     register_default_args(parser)
-    # parser.add_argument('--supervise', type=bool, default=False)
-    parser.add_argument('--num_of_cell', type=int, default=4)  # dest="num_of_cell for micro space"
+    parser.add_argument('--predict_hyper', type=bool, default=True)
+    parser.add_argument('--num_of_cell', type=int, default=2)  # dest="num_of_cell for micro space"
     args = parser.parse_args()
 
     return args

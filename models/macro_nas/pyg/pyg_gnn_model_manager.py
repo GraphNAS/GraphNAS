@@ -12,11 +12,11 @@ from models.macro_nas.pyg.pyg_gnn import GraphNet
 from models.utils.label_split import fix_size_split
 
 
-def load_data(dataset="Cora", supervise=False, full_data=True):
+def load_data(dataset="Cora", supervised=False, full_data=True):
     '''
-    support semi-supervise and supervise
+    support semi-supervised and supervised
     :param dataset:
-    :param supervise:
+    :param supervised:
     :return:
     '''
     path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'data', dataset)
@@ -27,7 +27,7 @@ def load_data(dataset="Cora", supervise=False, full_data=True):
     elif dataset in ["Cora", "Citeseer", "Pubmed"]:
         dataset = Planetoid(path, dataset, T.NormalizeFeatures())
     data = dataset[0]
-    if supervise:
+    if supervised:
         if full_data:
             data.train_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
             data.train_mask[:-1000] = 1
@@ -48,8 +48,8 @@ def load_data(dataset="Cora", supervise=False, full_data=True):
 class GeoCitationManager(CitationGNNManager):
     def __init__(self, args):
         super(GeoCitationManager, self).__init__(args)
-        if hasattr(args, "supervise"):
-            self.data = load_data(args.dataset, args.supervise)
+        if hasattr(args, "supervised"):
+            self.data = load_data(args.dataset, args.supervised)
         else:
             self.data = load_data(args.dataset)
         self.args.in_feats = self.in_feats = self.data.num_features

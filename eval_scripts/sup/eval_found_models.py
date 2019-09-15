@@ -40,7 +40,7 @@ def build_args():
                         help="optimizer save path")
     parser.add_argument('--weight_decay', type=float, default=5e-4)
     parser.add_argument('--max_param', type=float, default=5E6)
-    parser.add_argument('--supervise', type=bool, default=True)
+    parser.add_argument('--supervised', type=bool, default=True)
     parser.add_argument('--layers_of_child_model', type=int, default=2)
     args = parser.parse_args()
 
@@ -68,8 +68,9 @@ if __name__ == "__main__":
                 val_acc, test_acc = manager.evaluate(actions)
                 test_scores_list.append(test_acc)
             print("_" * 80)
+            test_scores_list.sort()
             if shuffle:
-                print(dataset, "randomly split results:", np.mean(test_scores_list), np.std(test_scores_list))
+                print(dataset, "randomly split results:", np.mean(test_scores_list[5:-5]), np.std(test_scores_list[5:-5]))
             else:
-                print(dataset, "fixed split results:", np.mean(test_scores_list), np.std(test_scores_list))
+                print(dataset, "fixed split results:", np.mean(test_scores_list[5:-5]), np.std(test_scores_list[5:-5]))
 

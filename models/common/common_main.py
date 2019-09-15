@@ -73,7 +73,7 @@ def register_default_args(parser):
                         help="optimizer save path")
     parser.add_argument('--weight_decay', type=float, default=5e-4)
     parser.add_argument('--max_param', type=float, default=5E6)
-    parser.add_argument('--supervise', type=bool, default=False)
+    parser.add_argument('--supervised', type=bool, default=False)
     parser.add_argument('--submanager_log_file', type=str, default="sub_manager_logger_file.txt")
 
 

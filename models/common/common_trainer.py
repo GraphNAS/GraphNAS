@@ -205,8 +205,7 @@ class Trainer(object):
         total_loss = 0
         for step in range(self.args.controller_max_step):
             # sample models
-            structure_list, log_probs, entropies = self.controller.sample(
-                with_details=True)
+            structure_list, log_probs, entropies = self.controller.sample(with_details=True)
 
             # calculate reward
             np_entropies = entropies.data.cpu().numpy()
@@ -282,8 +281,6 @@ class Trainer(object):
         results = []
         best_val_score = "0"
         for line in lines:
-            # right_index = line.index("]")
-            # left_index = line.index("[")
             actions = line[:line.index(";")]
             val_score = line.split(";")[-1]
             results.append((actions, val_score))
@@ -295,13 +292,12 @@ class Trainer(object):
             np.random.seed(123)
             torch.manual_seed(123)
             torch.cuda.manual_seed_all(123)
-            test_scores_list = []
+            val_scores_list = []
             for i in range(20):
-                # manager.shuffle_data()
                 val_acc, test_acc = self.submodel_manager.evaluate(actions)
-                test_scores_list.append(test_acc)
+                val_scores_list.append(val_acc)
 
-            tmp_score = np.mean(test_scores_list)
+            tmp_score = np.mean(val_scores_list)
             if tmp_score > best_score:
                 best_score = tmp_score
                 best_structure = actions
@@ -347,9 +343,6 @@ class Trainer(object):
                 if results > max_R:
                     max_R = results
                     best_actions = action
-                # with open(filename, "a") as f:
-                #     msg = f"gnn:{action},reward:{results}\n"
-                #     f.write(msg)
 
             logger.info(f'derive |action:{best_actions} |max_R: {max_R:8.6f}')
             self.evaluate(best_actions)
