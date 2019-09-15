@@ -5,7 +5,7 @@ import torch
 
 # sys.path.extend(['/GraphNAS'])
 from models.simple_nas.simple_model_manager import SimpleCitationManager
-from eval_scripts.semi.eval_found_gnn import build_args
+from eval_scripts.semi.eval_designed_gnn import build_args
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)
 

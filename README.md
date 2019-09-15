@@ -43,13 +43,13 @@ If you want to run in docker, you can run:
 
 #### Running the code
 ##### Architecture evaluation
-To evaluate our best architecture found in semi-supervised experiments by training from scratch, run
+To evaluate our best architecture designed on semi-supervised experiments by training from scratch, run
 
-    python -m eval_scripts.semi.eval_found_gnn
+    python -m eval_scripts.semi.eval_designed_gnn
 
-To evaluate our best architecture found in semi-supervised experiments by training from scratch, run
+To evaluate our best architecture designed on semi-supervised experiments by training from scratch, run
 
-    python -m eval_scripts.sup.eval_found_gnn
+    python -m eval_scripts.sup.eval_designed_gnn
 ###### Results
 Semi-supervised node classification w.r.t. accuracy
 
