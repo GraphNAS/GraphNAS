@@ -303,7 +303,7 @@ class Trainer(object):
                 best_structure = actions
 
         print("best structure:" + str(best_structure))
-
+        # train from scratch to get the final score
         np.random.seed(123)
         torch.manual_seed(123)
         torch.cuda.manual_seed_all(123)
