@@ -80,21 +80,6 @@ random-NAS | 90.0+/-0.3   |  81.1+/-0.3    | 90.7+/-0.6
 simple-NAS | 90.1+/-0.3  |  79.6+/-0.5    |  88.5+/-0.2  
 GraphNAS | 90.6+/-0.3   |  81.2+/-0.5   | 91.2+/-0.3    
 	
-Supervised learning on randomly split training data
-
-Model| Cora | Citeseer | Pubmed  
-|-|-|-|-| 
-GCN    | 88.3+/-1.3 | 77.2+/-1.7   | 88.1+/-1.4  
-SGC    | 88.2+/-1.4  |  77.4+/-1.8   |  85.8+/-1.2      
-GAT    | 87.2+/-1.1   |   77.1+/-1.3   | 87.8+/-1.4    
-LGCN    | 87.9+/-1.5   |   76.6+/-1.6   | OOM    
-DGCN    | 87.8+/-1.3  |   74.4+/-1.7   |  88.4+/-1.2    
-ARMA    | 88.2+/-1.0  |   76.7+/-1.5   |  88.7+/-1.0    
-APPNP    | 87.5+/-1.4   |  77.3+/-1.6    |  88.2+/-1.1    
-random-NAS |  88.5+/-1.0  |  76.5+/-1.3    | 90.3+/-0.8   
-simple-NAS |  88.5+/-1.0  |   77.5+/-2.3   |  88.5+/-1.1    
-GraphNAS | 88.9+/-1.2  |  77.6+/-1.5    |  91.1+/-1.0
-
 Architectures designed in supervised learning are showed as follow:
 <p align="center">
 <img src="./images/GraphNAS_cells.png" width="500"  alt="Architectures designed by GraphNAS in supervised experiments" align=center>

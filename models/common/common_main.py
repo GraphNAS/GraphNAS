@@ -17,7 +17,6 @@ def build_args():
 
 
 def register_default_args(parser):
-    # register_data_args(parser)
     parser.add_argument('--mode', type=str, default='train',
                         choices=['train', 'derive'],
                         help='train: Training GraphNAS, derive: Deriving Architectures')
@@ -37,7 +36,7 @@ def register_default_args(parser):
     parser.add_argument('--search_mode', type=str, default='macro')
     parser.add_argument('--format', type=str, default='two')
     parser.add_argument('--max_epoch', type=int, default=10)
-    # NOTE(brendan): irrelevant for actor critic.
+
     parser.add_argument('--ema_baseline_decay', type=float, default=0.95)
     parser.add_argument('--discount', type=float, default=1.0)
     parser.add_argument('--controller_max_step', type=int, default=100,

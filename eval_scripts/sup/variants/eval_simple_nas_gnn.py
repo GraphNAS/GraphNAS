@@ -2,7 +2,7 @@ import argparse
 
 import numpy as np
 import torch
-from eval_scripts.sup.eval_found_models import build_args
+from eval_scripts.sup.eval_found_gnn import build_args
 from models.simple_nas.simple_model_manager import SimpleCitationManager
 
 torch.manual_seed(123)
