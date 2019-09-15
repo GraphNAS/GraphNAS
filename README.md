@@ -32,19 +32,23 @@ As a result, this layer can be described as a list of operators: [0, gcn, 1, gat
 #### Requirements
 Recent versions of PyTorch, numpy, scipy, sklearn, dgl, torch_geometric and networkx are required.
 Ensure that at least PyTorch 1.0.0 is installed. Then run:
->  pip install -r requirements.txt
+    
+    pip install -r requirements.txt
 
 If you want to run in docker, you can run:
->  docker build -t graphnas -f DockerFile . \
->  docker run -it -v $(pwd):/GraphNAS graphnas python main.py --dataset cora
+
+    docker build -t graphnas -f DockerFile . \
+    docker run -it -v $(pwd):/GraphNAS graphnas python main.py --dataset cora
 
 #### Running the code
 ##### Architecture evaluation
 To evaluate our best architecture found in semi-supervised experiments by training from scratch, run
-> python -m eval_scripts.semi.eval_found_gnn
+
+    python -m eval_scripts.semi.eval_found_gnn
 
 To evaluate our best architecture found in semi-supervised experiments by training from scratch, run
-> python -m eval_scripts.sup.eval_found_gnn
+
+    python -m eval_scripts.sup.eval_found_gnn
 ###### Results
 Semi-supervised node classification w.r.t. accuracy
 
@@ -99,10 +103,12 @@ the architecture G-Citeseer designed by GraphNAS on  Citeseer is [0, identity, 0
 the architecture G-Pubmed designed by GraphNAS on  Pubmed is [1, gat8, 0, arma, tanh, concat]. 
 ##### Searching for new architectures
 To carry out architecture search using search space described in Section 3.2, run
-> python -m models.common.common_main --dataset Citeseer
+
+    python -m models.common.common_main --dataset Citeseer
 
 To carry out architecture search using search space described in Section 3.4, run
-> python -m models.micro_nas.micro_main --dataset Citeseer 
+    
+    python -m models.micro_nas.micro_main --dataset Citeseer 
 
 
 
