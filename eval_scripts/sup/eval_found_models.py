@@ -52,7 +52,7 @@ if __name__ == "__main__":
     gnn_list = [
         {'action': [0, 'gat_6', 0, 'gcn', 0, 'gcn', 2, 'arma', 'tanh', 'concat'], 'hyper_param': [0.01, 0.9, 0.0001, 64]},
         {'action': [0, 'linear', 0, 'gat_6', 'linear', 'concat'], 'hyper_param': [0.005, 0.8, 1e-05, 128]},
-        {'action': [0, 'linear', 1, 'gat_6', 'elu', 'product'], 'hyper_param': [0.01, 0.2, 0, 128]}
+        {'action': [1, 'gat_8', 0, 'arma', 'tanh', 'add'], 'hyper_param': [0.01, 0.4, 5e-05, 64]}
     ]
 
     dataset_list = ["Cora", "Citeseer", "Pubmed"]
