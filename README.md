@@ -101,6 +101,7 @@ Architectures designed in supervised learning are showed as follow:
 The architecture G-Cora designed by GraphNAS on Cora is [0, gat6, 0, gcn, 0, gcn, 2, arma, tanh, concat], 
 the architecture G-Citeseer designed by GraphNAS on  Citeseer is [0, identity, 0, gat6, linear, concat], 
 the architecture G-Pubmed designed by GraphNAS on  Pubmed is [1, gat8, 0, arma, tanh, concat]. 
+
 ##### Searching for new architectures
 To carry out architecture search using search space described in Section 3.2, run
 
