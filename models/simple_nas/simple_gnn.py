@@ -1,6 +1,6 @@
 import torch
 
-from models.macro_nas.pyg.geo_gnn import GraphNet, act_map, F
+from models.macro_nas.pyg.pyg_gnn import GraphNet, act_map, F
 from models.micro_nas.micro_search_space import gnn_map
 
 

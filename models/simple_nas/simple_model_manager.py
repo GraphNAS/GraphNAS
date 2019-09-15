@@ -1,4 +1,4 @@
-from models.macro_nas.pyg.geo_gnn_citation_manager import GeoCitationManager
+from models.macro_nas.pyg.pyg_gnn_model_manager import GeoCitationManager
 from models.simple_nas.simple_gnn import SimpleGNN
 
 

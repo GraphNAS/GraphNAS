@@ -1,4 +1,4 @@
-from models.macro_nas.pyg.geo_gnn_citation_manager import GeoCitationManager
+from models.macro_nas.pyg.pyg_gnn_model_manager import GeoCitationManager
 from models.micro_nas.micro_gnn import MicroGNN
 import torch
 import os.path as osp
