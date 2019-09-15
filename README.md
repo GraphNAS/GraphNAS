@@ -22,7 +22,7 @@ architecture to a sequential concatenation of the best search results built on e
 </p>
 An illustration of GraphNAS constructing  a single GNN layer at the right-hand side. 
 The layer has two input states O_1 and O_2, two intermediate states O_3 and O_4, and an output state O_5. 
-The controller at the left-hand side  samples O_2 from \{O_1, O_2, O_3\} and take O_2 as the input  of O_4, 
+The controller at the left-hand side  samples O_2 from {O_1, O_2, O_3} and take O_2 as the input  of O_4, 
 and then samples "GAT" for processing O_2.  
 The output state O_5=relu(O_3+O_4) collects information from  O_3 and O_4, 
 and the controller assigns a readout operator "add" and an activation operator "relu" for O_5. 
