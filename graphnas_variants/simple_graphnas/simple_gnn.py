@@ -1,7 +1,7 @@
 import torch
 
-from variants.macro_graphnas.pyg.pyg_gnn import GraphNet, act_map, F
-from variants.micro_graphnas.micro_search_space import gnn_map
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn import GraphNet, act_map, F
+from graphnas_variants.micro_graphnas.micro_search_space import gnn_map
 
 
 class SimpleGNN(GraphNet):

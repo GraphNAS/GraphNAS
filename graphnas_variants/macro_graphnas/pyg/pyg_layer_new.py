@@ -1,5 +1,5 @@
 from torch_geometric.utils import remove_self_loops, add_self_loops
-from variants.macro_graphnas.pyg.pyg_basic_operators import *
+from graphnas_variants.macro_graphnas.pyg.pyg_basic_operators import *
 
 def att_map(att_name, heads, out_channels):
     if att_name == "gat":

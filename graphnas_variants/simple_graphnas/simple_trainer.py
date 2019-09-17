@@ -1,5 +1,5 @@
 from graphnas.trainer import Trainer
-from variants.simple_graphnas.simple_model_manager import SimpleCitationManager
+from graphnas_variants.simple_graphnas.simple_model_manager import SimpleCitationManager
 
 
 class SimpleTrainer(Trainer):
@@ -9,7 +9,7 @@ class SimpleTrainer(Trainer):
         if self.args.search_mode == "simple":
             self.submodel_manager = SimpleCitationManager(self.args)
 
-            from variants.simple_graphnas.simple_search_space import SimpleSearchSpace
+            from graphnas_variants.simple_graphnas.simple_search_space import SimpleSearchSpace
             search_space_cls = SimpleSearchSpace()
             self.search_space = search_space_cls.get_search_space()
             self.action_list = search_space_cls.generate_action_list(self.args.layers_of_child_model)

@@ -8,7 +8,7 @@ import torch_geometric.transforms as T
 from torch_geometric.datasets import Planetoid, Coauthor, Amazon
 
 from graphnas.gnn_model_manager import CitationGNNManager, evaluate
-from variants.macro_graphnas.pyg.pyg_gnn import GraphNet
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn import GraphNet
 from graphnas.utils.label_split import fix_size_split
 
 

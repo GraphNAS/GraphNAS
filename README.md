@@ -101,11 +101,11 @@ the architecture G-Pubmed designed by GraphNAS on  Pubmed is [1, gat8, 0, arma, 
 ##### Searching for new architectures
 To design an entire graph neural architecture based on the search space described in Section 3.2, please run: 
 
-    python -m models.common_main --dataset Citeseer
+    python -m graphnas.main --dataset Citeseer
 
 To design an entire graph neural architecture based on the search space described in Section 3.4, please run: 
     
-    python -m models.common_main --dataset Citeseer --supervised True --search_mode micro
+    python -m graphnas.main --dataset Citeseer --supervised True --search_mode micro
 
 Be aware that different runs would end up with different local minimum.
 

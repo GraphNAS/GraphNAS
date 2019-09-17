@@ -3,7 +3,7 @@ import torch.nn.functional as F
 
 from graphnas.gnn import GraphNet as BaseNet
 from graphnas.search_space import act_map
-from variants.macro_graphnas.pyg.pyg_gnn_layer import GeoLayer
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_layer import GeoLayer
 
 
 class GraphNet(BaseNet):

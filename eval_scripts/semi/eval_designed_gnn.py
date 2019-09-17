@@ -3,9 +3,8 @@ import argparse
 import numpy as np
 import torch
 
-# sys.path.extend(['/GraphNAS'])
-from variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
 from graphnas.gnn_model_manager import CitationGNNManager
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
 
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)
@@ -55,8 +54,8 @@ if __name__ == "__main__":
         ['gcn', 'sum', 'tanh', 6, 64, 'cos', 'sum', 'tanh', 6, 3],
         ['const', 'sum', 'relu6', 2, 128, 'gat', 'sum', 'linear', 2, 7],
     ]
-    dataset_list =["Citeseer", "Pubmed", "cora"]
-    base_list = ["pyg", "pyg", "dgl",]
+    dataset_list = ["Citeseer", "Pubmed", "cora"]
+    base_list = ["pyg", "pyg", "dgl", ]
     for dataset, actions, base in zip(dataset_list, gnn_list, base_list):
         # if dataset == "cora":
         #     continue
