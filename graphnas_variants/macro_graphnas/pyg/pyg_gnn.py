@@ -1,9 +1,9 @@
 import torch
 import torch.nn.functional as F
 
-from models.macro_nas.dgl.gnn import GraphNet as BaseNet
-from models.macro_nas.macro_search_space import act_map
-from models.macro_nas.pyg.pyg_gnn_layer import GeoLayer
+from models.gnn import GraphNet as BaseNet
+from models.macro_search_space import act_map
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_layer import GeoLayer
 
 
 class GraphNet(BaseNet):

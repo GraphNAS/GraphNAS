@@ -1,10 +1,8 @@
-import argparse
-
 import numpy as np
 import torch
 
 # sys.path.extend(['/GraphNAS'])
-from models.macro_nas.pyg.pyg_gnn_model_manager import GeoCitationManager
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
 from eval_scripts.semi.eval_designed_gnn import build_args
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)

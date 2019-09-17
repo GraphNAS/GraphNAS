@@ -4,9 +4,9 @@ import argparse
 
 import torch
 
-import models.micro_nas.micro_trainer as trainer
-import utils
-from models.common.common_main import register_default_args
+import graphnas_variants.micro_graphnas.micro_trainer as trainer
+from models import utils
+from models.common_main import register_default_args
 
 
 def build_args():

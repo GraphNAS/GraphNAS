@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from models.micro_nas.micro_search_space import gnn_map, act_map
+from graphnas_variants.micro_graphnas.micro_search_space import gnn_map, act_map
 
 
 class MicroGNN(nn.Module):

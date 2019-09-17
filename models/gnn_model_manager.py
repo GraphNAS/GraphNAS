@@ -7,7 +7,7 @@ import torch.nn.functional as F
 from dgl import DGLGraph
 from dgl.data import load_data
 
-from models.macro_nas.dgl.gnn import GraphNet
+from models.gnn import GraphNet
 from models.utils.model_utils import EarlyStop, TopAverage, process_action
 
 
@@ -81,8 +81,9 @@ class CitationGNNManager(object):
         optimizer = torch.optim.Adam(model.parameters(), lr=self.args.lr, weight_decay=self.args.weight_decay)
         try:
             model, val_acc, test_acc = self.run_model(model, optimizer, self.loss_fn, self.data, self.epochs,
-                                            cuda=self.args.cuda, return_best=True,
-                                            half_stop_score=max(self.reward_manager.get_top_average() * 0.7, 0.4))
+                                                      cuda=self.args.cuda, return_best=True,
+                                                      half_stop_score=max(self.reward_manager.get_top_average() * 0.7,
+                                                                          0.4))
         except RuntimeError as e:
             if "cuda" in str(e) or "CUDA" in str(e):
                 print(e)
@@ -91,6 +92,7 @@ class CitationGNNManager(object):
             else:
                 raise e
         return val_acc, test_acc
+
     # train from scratch
     def train(self, actions=None, format="two"):
         origin_action = actions
@@ -121,7 +123,7 @@ class CitationGNNManager(object):
         return reward, val_acc
 
     def record_action_info(self, origin_action, reward, val_acc):
-        with open(self.args.dataset + self.args.submanager_log_file, "a") as file:
+        with open(self.args.dataset + "_" + self.args.search_mode + self.args.submanager_log_file, "a") as file:
             # with open(f'{self.args.dataset}_{self.args.search_mode}_{self.args.format}_manager_result.txt', "a") as file:
             file.write(str(origin_action))
 
@@ -196,6 +198,7 @@ class CitationGNNManager(object):
             return model, model_val_acc, best_performance
         else:
             return model, model_val_acc
+
     # @staticmethod
     # def run_model(model, optimizer, loss_fn, data, epochs, early_stop=5, tmp_model_file="citation_testing_2.pkl",
     #               half_stop_score=0, return_best=False, cuda=True, need_early_stop=False):

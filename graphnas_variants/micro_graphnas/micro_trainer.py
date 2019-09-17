@@ -1,5 +1,5 @@
-from models.common.common_trainer import Trainer, logger
-from models.micro_nas.micro_search_space import IncrementSearchSpace
+from models.common_trainer import Trainer, logger
+from graphnas_variants.micro_graphnas.micro_search_space import IncrementSearchSpace
 
 
 class HyperTrainer(Trainer):
@@ -16,8 +16,8 @@ class HyperTrainer(Trainer):
             self.args.num_of_cell = 2
         search_space_cls = IncrementSearchSpace()
         search_space = search_space_cls.get_search_space()
-        from models.common.common_nas_controller import SimpleNASController
-        from models.micro_nas.micro_model_manager import MicroCitationManager
+        from models.common_nas_controller import SimpleNASController
+        from graphnas_variants.micro_graphnas.micro_model_manager import MicroCitationManager
         self.submodel_manager = MicroCitationManager(self.args)
         self.search_space = search_space
         action_list = search_space_cls.generate_action_list(cell=self.args.num_of_cell)

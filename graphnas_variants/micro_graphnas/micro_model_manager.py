@@ -1,5 +1,5 @@
-from models.macro_nas.pyg.pyg_gnn_model_manager import GeoCitationManager
-from models.micro_nas.micro_gnn import MicroGNN
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
+from graphnas_variants.micro_graphnas.micro_gnn import MicroGNN
 import torch
 import os.path as osp
 from torch_geometric.datasets import Planetoid, Coauthor, Amazon

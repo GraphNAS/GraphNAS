@@ -4,8 +4,8 @@ import numpy as np
 import torch
 
 # sys.path.extend(['/GraphNAS'])
-from models.macro_nas.pyg.pyg_gnn_model_manager import GeoCitationManager
-from models.macro_nas.dgl.gnn_model_manager import CitationGNNManager
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
+from models.gnn_model_manager import CitationGNNManager
 
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)

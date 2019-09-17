@@ -1,11 +1,12 @@
 """Entry point."""
 
 import argparse
+import time
 
 import torch
 
-import models.common.common_trainer as trainer
-import utils
+import models.common_trainer as trainer
+import models.utils.tensor_utils as utils
 
 
 def build_args():
@@ -73,7 +74,7 @@ def register_default_args(parser):
     parser.add_argument('--weight_decay', type=float, default=5e-4)
     parser.add_argument('--max_param', type=float, default=5E6)
     parser.add_argument('--supervised', type=bool, default=False)
-    parser.add_argument('--submanager_log_file', type=str, default="sub_manager_logger_file.txt")
+    parser.add_argument('--submanager_log_file', type=str, default=f"sub_manager_logger_file_{time.time()}.txt")
 
 
 def main(args):  # pylint:disable=redefined-outer-name

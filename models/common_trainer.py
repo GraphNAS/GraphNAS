@@ -5,9 +5,9 @@ import numpy as np
 import scipy.signal
 import torch
 
-import utils
-from models.macro_nas.dgl.gnn_model_manager import CitationGNNManager
-from models.macro_nas.pyg.pyg_gnn_model_manager import GeoCitationManager
+import models.utils.tensor_utils as utils
+from models.gnn_model_manager import CitationGNNManager
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
 
 logger = utils.get_logger()
 
@@ -75,12 +75,12 @@ class Trainer(object):
         self.args.shared_initial_step = 0
         if self.args.search_mode == "macro":
             # generate model description in macro way (generate entire network description)
-            from models.macro_nas.macro_search_space import MacroSearchSpace
+            from models.macro_search_space import MacroSearchSpace
             search_space_cls = MacroSearchSpace()
             self.search_space = search_space_cls.get_search_space()
             self.action_list = search_space_cls.generate_action_list(self.args.layers_of_child_model)
             # build RNN controller
-            from models.common.common_nas_controller import SimpleNASController
+            from models.common_nas_controller import SimpleNASController
             self.controller = SimpleNASController(self.args, action_list=self.action_list,
                                                   search_space=self.search_space,
                                                   cuda=self.args.cuda)
@@ -92,16 +92,43 @@ class Trainer(object):
                 # implements based on pyg
                 self.submodel_manager = GeoCitationManager(self.args)
 
-        if self.args.search_mode == "simple":
-            from models.simple.simple_nas_controller import SimpleNASController
-            from models.simple.citation_manager import SimpleCitationManager
-            self.submodel_manager = SimpleCitationManager(self.args)
-            self.controller = SimpleNASController(self.args, cuda=self.args.cuda,
-                                                  num_layers=self.args.layers_of_child_model)
+
+        if self.args.search_mode == "micro":
+            self.args.format = "micro"
+            self.args.predict_hyper = True
+            if not hasattr(self.args, "num_of_cell"):
+                self.args.num_of_cell = 2
+            from graphnas_variants.micro_graphnas.micro_search_space import IncrementSearchSpace
+            search_space_cls = IncrementSearchSpace()
+            search_space = search_space_cls.get_search_space()
+            from models.common_nas_controller import SimpleNASController
+            from graphnas_variants.micro_graphnas.micro_model_manager import MicroCitationManager
+            self.submodel_manager = MicroCitationManager(self.args)
+            self.search_space = search_space
+            action_list = search_space_cls.generate_action_list(cell=self.args.num_of_cell)
+            if hasattr(self.args, "predict_hyper") and self.args.predict_hyper:
+                self.action_list = action_list + ["learning_rate", "dropout", "weight_decay", "hidden_unit"]
+            else:
+                self.action_list = action_list
+            self.controller = SimpleNASController(self.args, action_list=self.action_list,
+                                                  search_space=self.search_space,
+                                                  cuda=self.args.cuda)
+            if self.cuda:
+                self.controller.cuda()
+
         if self.cuda:
             self.controller.cuda()
 
     def form_gnn_info(self, gnn):
+        if self.args.search_mode == "micro":
+            actual_action = {}
+            if self.args.predict_hyper:
+                actual_action["action"] = gnn[:-4]
+                actual_action["hyper_param"] = gnn[-4:]
+            else:
+                actual_action["action"] = gnn
+                actual_action["hyper_param"] = [0.005, 0.8, 5e-5, 128]
+            return actual_action
         return gnn
 
     def train(self):

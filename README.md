@@ -48,8 +48,8 @@ Ensure that at least PyTorch 1.0.0 is installed. Then run:
 
 If you want to run in docker, you can run:
 
-    docker build -t graphnas -f DockerFile . \
-    docker run -it -v $(pwd):/GraphNAS graphnas python main.py --dataset cora
+    docker build -t graphnas -f DockerFile . 
+    docker run -it -v $(pwd):/GraphNAS graphnas python -m eval_scripts.semi.eval_designed_gnn
 
 #### Running the code
 ##### Architecture evaluation
@@ -101,17 +101,11 @@ the architecture G-Pubmed designed by GraphNAS on  Pubmed is [1, gat8, 0, arma, 
 ##### Searching for new architectures
 To design an entire graph neural architecture based on the search space described in Section 3.2, please run: 
 
-    python -m models.common.common_main --dataset Citeseer
+    python -m models.common_main --dataset Citeseer
 
-To design an entire graph neural architecture based on the search space described in Section 3.4
-
-
-
-
-
-, please run: 
+To design an entire graph neural architecture based on the search space described in Section 3.4, please run: 
     
-    python -m models.micro_nas.micro_main --dataset Citeseer --supervised True
+    python -m models.common_main --dataset Citeseer --supervised True --search_mode micro
 
 Be aware that different runs would end up with different local minimum.
 

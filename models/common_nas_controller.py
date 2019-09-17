@@ -1,9 +1,7 @@
-import numpy as np
-import scipy
 import torch
 import torch.nn.functional as F
 
-import utils
+import models.utils.tensor_utils as utils
 
 
 # not contains skip-connection
@@ -24,7 +22,9 @@ class SimpleNASController(torch.nn.Module):
             raise RuntimeError("There are actions not contained in search_space")
         super(SimpleNASController, self).__init__()
         self.mode = mode
+        # search space or operators set containing operators used to build GNN
         self.search_space = search_space
+        # operator categories for each controller RNN output
         self.action_list = action_list
         self.controller_hid = controller_hid
         self.is_cuda = cuda

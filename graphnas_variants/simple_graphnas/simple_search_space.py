@@ -1,4 +1,4 @@
-from models.micro_nas.micro_search_space import gnn_list
+from graphnas_variants.micro_graphnas.micro_search_space import gnn_list
 
 
 class SimpleSearchSpace(object):

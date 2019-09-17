@@ -1,5 +1,5 @@
-from models.common.common_trainer import Trainer
-from models.simple_nas.simple_model_manager import SimpleCitationManager
+from models.common_trainer import Trainer
+from graphnas_variants.simple_graphnas.simple_model_manager import SimpleCitationManager
 
 
 class SimpleTrainer(Trainer):
@@ -9,12 +9,12 @@ class SimpleTrainer(Trainer):
         if self.args.search_mode == "simple":
             self.submodel_manager = SimpleCitationManager(self.args)
 
-            from models.simple_nas.simple_search_space import SimpleSearchSpace
+            from graphnas_variants.simple_graphnas.simple_search_space import SimpleSearchSpace
             search_space_cls = SimpleSearchSpace()
             self.search_space = search_space_cls.get_search_space()
             self.action_list = search_space_cls.generate_action_list(self.args.layers_of_child_model)
             # build RNN controller
-            from models.common.common_nas_controller import SimpleNASController
+            from models.common_nas_controller import SimpleNASController
             self.controller = SimpleNASController(self.args, action_list=self.action_list,
                                                   search_space=self.search_space,
                                                   cuda=self.args.cuda)

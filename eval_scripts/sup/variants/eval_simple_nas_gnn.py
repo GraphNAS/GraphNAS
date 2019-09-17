@@ -1,9 +1,7 @@
-import argparse
-
 import numpy as np
 import torch
 from eval_scripts.sup.eval_designed_gnn import build_args
-from models.simple_nas.simple_model_manager import SimpleCitationManager
+from graphnas_variants.simple_graphnas.simple_model_manager import SimpleCitationManager
 
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)
