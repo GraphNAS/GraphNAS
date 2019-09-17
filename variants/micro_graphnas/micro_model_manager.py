@@ -1,10 +1,10 @@
-from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
-from graphnas_variants.micro_graphnas.micro_gnn import MicroGNN
+from variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
+from variants.micro_graphnas.micro_gnn import MicroGNN
 import torch
 import os.path as osp
 from torch_geometric.datasets import Planetoid, Coauthor, Amazon
 import torch_geometric.transforms as T
-from models.utils.label_split import fix_size_split
+from graphnas.utils.label_split import fix_size_split
 
 
 def load_data(dataset="Cora", supervised=False, full_data=True):

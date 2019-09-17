@@ -7,8 +7,8 @@ import torch.nn.functional as F
 from dgl import DGLGraph
 from dgl.data import load_data
 
-from models.gnn import GraphNet
-from models.utils.model_utils import EarlyStop, TopAverage, process_action
+from graphnas.gnn import GraphNet
+from graphnas.utils.model_utils import EarlyStop, TopAverage, process_action
 
 
 def load(args, save_file=".npy"):

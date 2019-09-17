@@ -5,7 +5,7 @@ from torch_geometric.nn.inits import glorot, zeros
 from torch_geometric.utils import remove_self_loops, add_self_loops, add_remaining_self_loops, softmax
 from torch_scatter import scatter_add
 
-from graphnas_variants.macro_graphnas.pyg.message_passing import MessagePassing
+from variants.macro_graphnas.pyg.message_passing import MessagePassing
 
 
 class GeoLayer(MessagePassing):

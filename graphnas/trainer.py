@@ -5,9 +5,9 @@ import numpy as np
 import scipy.signal
 import torch
 
-import models.utils.tensor_utils as utils
-from models.gnn_model_manager import CitationGNNManager
-from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
+import graphnas.utils.tensor_utils as utils
+from graphnas.gnn_model_manager import CitationGNNManager
+from variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
 
 logger = utils.get_logger()
 
@@ -75,12 +75,12 @@ class Trainer(object):
         self.args.shared_initial_step = 0
         if self.args.search_mode == "macro":
             # generate model description in macro way (generate entire network description)
-            from models.macro_search_space import MacroSearchSpace
+            from graphnas.search_space import MacroSearchSpace
             search_space_cls = MacroSearchSpace()
             self.search_space = search_space_cls.get_search_space()
             self.action_list = search_space_cls.generate_action_list(self.args.layers_of_child_model)
             # build RNN controller
-            from models.common_nas_controller import SimpleNASController
+            from graphnas.graphnas_controller import SimpleNASController
             self.controller = SimpleNASController(self.args, action_list=self.action_list,
                                                   search_space=self.search_space,
                                                   cuda=self.args.cuda)
@@ -98,11 +98,11 @@ class Trainer(object):
             self.args.predict_hyper = True
             if not hasattr(self.args, "num_of_cell"):
                 self.args.num_of_cell = 2
-            from graphnas_variants.micro_graphnas.micro_search_space import IncrementSearchSpace
+            from variants.micro_graphnas.micro_search_space import IncrementSearchSpace
             search_space_cls = IncrementSearchSpace()
             search_space = search_space_cls.get_search_space()
-            from models.common_nas_controller import SimpleNASController
-            from graphnas_variants.micro_graphnas.micro_model_manager import MicroCitationManager
+            from graphnas.graphnas_controller import SimpleNASController
+            from variants.micro_graphnas.micro_model_manager import MicroCitationManager
             self.submodel_manager = MicroCitationManager(self.args)
             self.search_space = search_space
             action_list = search_space_cls.generate_action_list(cell=self.args.num_of_cell)
@@ -139,7 +139,7 @@ class Trainer(object):
         """
 
         for self.epoch in range(self.start_epoch, self.args.max_epoch):
-            # 1. Training the shared parameters of the child models
+            # 1. Training the shared parameters of the child graphnas
             self.train_shared(max_step=self.args.shared_initial_step)
             # 2. Training the controller parameters theta
             self.train_controller()
@@ -231,7 +231,7 @@ class Trainer(object):
         hidden = self.controller.init_hidden(self.args.batch_size)
         total_loss = 0
         for step in range(self.args.controller_max_step):
-            # sample models
+            # sample graphnas
             structure_list, log_probs, entropies = self.controller.sample(with_details=True)
 
             # calculate reward

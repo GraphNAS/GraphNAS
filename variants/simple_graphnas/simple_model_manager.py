@@ -1,5 +1,5 @@
-from graphnas_variants.macro_graphnas.pyg import GeoCitationManager
-from graphnas_variants.simple_graphnas.simple_gnn import SimpleGNN
+from variants.macro_graphnas.pyg import GeoCitationManager
+from variants.simple_graphnas.simple_gnn import SimpleGNN
 
 
 class SimpleCitationManager(GeoCitationManager):

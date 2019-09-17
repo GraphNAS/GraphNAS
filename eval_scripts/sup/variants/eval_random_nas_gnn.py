@@ -2,7 +2,7 @@ import numpy as np
 import torch
 from eval_scripts.sup.eval_designed_gnn import build_args
 # sys.path.extend(['/GraphNAS'])
-from graphnas_variants.micro_graphnas.micro_model_manager import MicroCitationManager
+from variants.micro_graphnas.micro_model_manager import MicroCitationManager
 torch.manual_seed(123)
 torch.cuda.manual_seed_all(123)
 

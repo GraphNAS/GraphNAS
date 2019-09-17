@@ -1,7 +1,7 @@
 import torch
 import torch.nn.functional as F
 
-import models.utils.tensor_utils as utils
+import graphnas.utils.tensor_utils as utils
 
 
 # not contains skip-connection

@@ -5,8 +5,8 @@ import time
 
 import torch
 
-import models.common_trainer as trainer
-import models.utils.tensor_utils as utils
+import graphnas.trainer as trainer
+import graphnas.utils.tensor_utils as utils
 
 
 def build_args():
