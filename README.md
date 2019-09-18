@@ -42,8 +42,9 @@ collects information from ![O_3](http://latex.codecogs.com/gif.latex?O_3) and ![
 
 #### Requirements
 Recent versions of PyTorch, numpy, scipy, sklearn, dgl, torch_geometric and networkx are required.
-Ensure that at least PyTorch 1.0.0 is installed. Then run:
+Ensure that PyTorch 1.1.0 and CUDA 9.0 are installed. Then run:
     
+    pip install torch==1.1.0 -f https://download.pytorch.org/whl/cu90/torch_stable.html
     pip install -r requirements.txt
 
 If you want to run in docker, you can run:
