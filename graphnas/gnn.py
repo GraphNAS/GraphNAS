@@ -596,7 +596,7 @@ class GRUAggregator(SumAggregator):
 ######################################################################
 class GATFinalize(nn.Module):
     '''
-        concat + 全连接层
+        concat + fully connected layer
     '''
 
     def __init__(self, headid, indim, hiddendim, activation, residual):

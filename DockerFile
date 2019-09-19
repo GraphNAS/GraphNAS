@@ -3,7 +3,7 @@ WORKDIR /GraphNAS
 COPY ./requirements.txt /GraphNAS
 
 RUN pip install torch==1.1.0
-RUN pip install dgl==0.3 scipy==1.1.0 numpy==1.15.4 hyperopt==0.1.2 scikit_learn==0.21.3
+RUN pip install dgl==0.3 scipy==1.1.0 numpy==1.15.4 hyperopt==0.1.2 scikit_learn==0.21.3 requests
 
 # pytorch-geometric denpendencies
 RUN pip install --verbose --no-cache-dir torch-scatter

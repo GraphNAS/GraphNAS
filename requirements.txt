@@ -7,3 +7,4 @@ torch_geometric==1.2.1
 numpy==1.15.4
 hyperopt==0.1.2
 scikit_learn==0.21.3
+requests
