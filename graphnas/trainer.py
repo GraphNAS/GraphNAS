@@ -302,7 +302,7 @@ class Trainer(object):
         logger.info(f'eval | {gnn} | reward: {reward:8.2f} | scores: {scores:8.2f}')
 
     def derive_from_history(self):
-        with open(self.args.dataset + self.args.submanager_log_file) as f:
+        with open(self.args.dataset + "_" + self.args.search_mode + self.args.submanager_log_file, "a") as f:
             lines = f.readlines()
 
         results = []
