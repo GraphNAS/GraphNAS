@@ -5,7 +5,7 @@ import argparse
 import torch
 
 import graphnas_variants.micro_graphnas.micro_trainer as trainer
-from graphnas import utils
+from graphnas.utils.tensor_utils import makedirs
 from graphnas.main import register_default_args
 
 
@@ -28,7 +28,7 @@ def main(args):  # pylint:disable=redefined-outer-name
     if args.cuda:
         torch.cuda.manual_seed(args.random_seed)
 
-    utils.makedirs(args.dataset)
+    makedirs(args.dataset)
 
     trnr = trainer.HyperTrainer(args)
 

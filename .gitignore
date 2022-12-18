@@ -109,3 +109,7 @@ venv.bak/
 # idea information
 .idea/
 logfile
+
+#Data
+ graphnas_variants/data/*
+ graphnas_variants/macro_graphnas/data/*

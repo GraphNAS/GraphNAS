@@ -1,4 +1,4 @@
-from graphnas_variants.macro_graphnas.pyg import GeoCitationManager
+from graphnas_variants.macro_graphnas.pyg.pyg_gnn_model_manager import GeoCitationManager
 from graphnas_variants.simple_graphnas.simple_gnn import SimpleGNN
 
 

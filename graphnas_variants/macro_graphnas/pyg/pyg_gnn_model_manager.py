@@ -21,26 +21,26 @@ def load_data(dataset="Cora", supervised=False, full_data=True):
     '''
     path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'data', dataset)
     if dataset in ["CS", "Physics"]:
-        dataset = Coauthor(path, dataset, T.NormalizeFeatures())
+        dataset = Coauthor(path, dataset, transform=T.NormalizeFeatures())
     elif dataset in ["Computers", "Photo"]:
-        dataset = Amazon(path, dataset, T.NormalizeFeatures())
+        dataset = Amazon(path, dataset, transform=T.NormalizeFeatures())
     elif dataset in ["Cora", "Citeseer", "Pubmed"]:
-        dataset = Planetoid(path, dataset, T.NormalizeFeatures())
+        dataset = Planetoid(path, dataset, transform=T.NormalizeFeatures())
     data = dataset[0]
     if supervised:
         if full_data:
-            data.train_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
+            data.train_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
             data.train_mask[:-1000] = 1
-            data.val_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
+            data.val_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
             data.val_mask[data.num_nodes - 1000: data.num_nodes - 500] = 1
-            data.test_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
+            data.test_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
             data.test_mask[data.num_nodes - 500:] = 1
         else:
-            data.train_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
+            data.train_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
             data.train_mask[:1000] = 1
-            data.val_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
+            data.val_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
             data.val_mask[data.num_nodes - 1000: data.num_nodes - 500] = 1
-            data.test_mask = torch.zeros(data.num_nodes, dtype=torch.uint8)
+            data.test_mask = torch.zeros(data.num_nodes, dtype=torch.bool)
             data.test_mask[data.num_nodes - 500:] = 1
     return data
 

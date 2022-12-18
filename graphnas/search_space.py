@@ -7,13 +7,21 @@ class MacroSearchSpace(object):
             self.search_space = search_space
         else:
             # Define operators in search space
+            # self.search_space = {
+            #     "attention_type": ["gat", "gcn", "cos", "const", "gat_sym", 'linear', 'generalized_linear'],
+            #     'aggregator_type': ["sum", "mean", "max", "mlp", ],
+            #     'activate_function': ["sigmoid", "tanh", "relu", "linear",
+            #                           "softplus", "leaky_relu", "relu6", "elu"],
+            #     'number_of_heads': [1, 2, 4, 6, 8, 16],
+            #     'hidden_units': [4, 8, 16, 32, 64, 128, 256],
+            # }
+
             self.search_space = {
-                "attention_type": ["gat", "gcn", "cos", "const", "gat_sym", 'linear', 'generalized_linear'],
-                'aggregator_type': ["sum", "mean", "max", "mlp", ],
-                'activate_function': ["sigmoid", "tanh", "relu", "linear",
-                                      "softplus", "leaky_relu", "relu6", "elu"],
-                'number_of_heads': [1, 2, 4, 6, 8, 16],
-                'hidden_units': [4, 8, 16, 32, 64, 128, 256],
+                "attention_type": ["gat"],
+                'aggregator_type': ["sum", "mean" ],
+                'activate_function': [ "relu", "linear",],
+                'number_of_heads': [4 ],
+                'hidden_units': [ 16, 32,],
             }
 
     def get_search_space(self):

@@ -15,7 +15,7 @@ def build_args():
     parser.add_argument('--random_seed', type=int, default=123)
     parser.add_argument('--search_mode', type=str, default="nas")
     parser.add_argument('--format', type=str, default="two")
-    parser.add_argument("--cuda", type=bool, default=True, required=False,
+    parser.add_argument("--cuda", type=bool, default=False, required=False,
                         help="run in cuda mode")
     # child model
     parser.add_argument("--dataset", type=str, default="Cora", required=False,
