@@ -1,0 +1,503 @@
+2023-01-06 12:01:09,424:INFO::[*] LOADED: Cora/controller_epoch8_step900.pth
+{'action': [0, 'gcn', 2, 'sg', 'tanh', 'add'], 'hyper_param': [0.0005, 0.9, 0.0005, 256]}
+train action: [0, 'gcn', 2, 'sg', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.9
+{'action': [0, 'gcn', 2, 'sg', 'tanh', 'add'], 'hyper_param': [0.0005, 0.9, 0.0005, 256]}
+train action: [0, 'gcn', 2, 'sg', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.876,test_score:0.9
+{'action': [0, 'gcn', 2, 'sg', 'tanh', 'add'], 'hyper_param': [0.0005, 0.9, 0.0005, 256]}
+train action: [0, 'gcn', 2, 'sg', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.874,test_score:0.902
+{'action': [0, 'gcn', 2, 'sg', 'tanh', 'add'], 'hyper_param': [0.0005, 0.9, 0.0005, 256]}
+train action: [0, 'gcn', 2, 'sg', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.9
+{'action': [0, 'gcn', 2, 'sg', 'tanh', 'add'], 'hyper_param': [0.0005, 0.9, 0.0005, 256]}
+train action: [0, 'gcn', 2, 'sg', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.852,test_score:0.9
+{'action': [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat'], 'hyper_param': [0.01, 0.9, 0, 256]}
+train action: [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.872,test_score:0.902
+{'action': [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat'], 'hyper_param': [0.01, 0.9, 0, 256]}
+train action: [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.892
+{'action': [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat'], 'hyper_param': [0.01, 0.9, 0, 256]}
+train action: [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.896
+{'action': [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat'], 'hyper_param': [0.01, 0.9, 0, 256]}
+train action: [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.898
+{'action': [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat'], 'hyper_param': [0.01, 0.9, 0, 256]}
+train action: [0, 'linear', 0, 'gat_1', 'sigmoid', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.902
+{'action': [1, 'gat_1', 0, 'gat_1', 'tanh', 'add'], 'hyper_param': [0.01, 0.9, 1e-05, 256]}
+train action: [1, 'gat_1', 0, 'gat_1', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.9
+{'action': [1, 'gat_1', 0, 'gat_1', 'tanh', 'add'], 'hyper_param': [0.01, 0.9, 1e-05, 256]}
+train action: [1, 'gat_1', 0, 'gat_1', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.854,test_score:0.902
+{'action': [1, 'gat_1', 0, 'gat_1', 'tanh', 'add'], 'hyper_param': [0.01, 0.9, 1e-05, 256]}
+train action: [1, 'gat_1', 0, 'gat_1', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.9
+{'action': [1, 'gat_1', 0, 'gat_1', 'tanh', 'add'], 'hyper_param': [0.01, 0.9, 1e-05, 256]}
+train action: [1, 'gat_1', 0, 'gat_1', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.898
+{'action': [1, 'gat_1', 0, 'gat_1', 'tanh', 'add'], 'hyper_param': [0.01, 0.9, 1e-05, 256]}
+train action: [1, 'gat_1', 0, 'gat_1', 'tanh', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.896
+{'action': [1, 'gat_6', 0, 'gat_1', 'linear', 'concat'], 'hyper_param': [0.001, 0.9, 1e-05, 128]}
+train action: [1, 'gat_6', 0, 'gat_1', 'linear', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.876,test_score:0.896
+{'action': [1, 'gat_6', 0, 'gat_1', 'linear', 'concat'], 'hyper_param': [0.001, 0.9, 1e-05, 128]}
+train action: [1, 'gat_6', 0, 'gat_1', 'linear', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.896
+{'action': [1, 'gat_6', 0, 'gat_1', 'linear', 'concat'], 'hyper_param': [0.001, 0.9, 1e-05, 128]}
+train action: [1, 'gat_6', 0, 'gat_1', 'linear', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.89
+{'action': [1, 'gat_6', 0, 'gat_1', 'linear', 'concat'], 'hyper_param': [0.001, 0.9, 1e-05, 128]}
+train action: [1, 'gat_6', 0, 'gat_1', 'linear', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.902
+{'action': [1, 'gat_6', 0, 'gat_1', 'linear', 'concat'], 'hyper_param': [0.001, 0.9, 1e-05, 128]}
+train action: [1, 'gat_6', 0, 'gat_1', 'linear', 'concat']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.874,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+best structure:{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.874,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.854,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.872,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.872,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.892
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.852,test_score:0.892
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.874,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.872,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.892
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.874,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.858,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.858,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.858,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.854,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.902
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.892
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.874,test_score:0.9
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.892
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.892
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.864,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.898
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.862,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.86,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.866,test_score:0.894
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.868,test_score:0.896
+{'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}
+train action: [0, 'gat_2', 0, 'gat_1', 'relu', 'add']
+Number of train datas: tensor(1708, device='cuda:0')
+val_score:0.87,test_score:0.894
+best results: {'action': [0, 'gat_2', 0, 'gat_1', 'relu', 'add'], 'hyper_param': [0.001, 0.9, 0, 256]}: 0.89708000 +/- 0.002614115529199123

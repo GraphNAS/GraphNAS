@@ -302,7 +302,7 @@ class Trainer(object):
         logger.info(f'eval | {gnn} | reward: {reward:8.2f} | scores: {scores:8.2f}')
 
     def derive_from_history(self):
-        with open(self.args.dataset + "_" + self.args.search_mode + self.args.submanager_log_file, "a") as f:
+        with open(self.args.dataset + "_" + self.args.search_mode + self.args.submanager_log_file, "r+") as f:
             lines = f.readlines()
 
         results = []
@@ -320,7 +320,7 @@ class Trainer(object):
             torch.manual_seed(123)
             torch.cuda.manual_seed_all(123)
             val_scores_list = []
-            for i in range(20):
+            for i in range(10):
                 val_acc, test_acc = self.submodel_manager.evaluate(actions)
                 val_scores_list.append(val_acc)
 
@@ -335,7 +335,7 @@ class Trainer(object):
         torch.manual_seed(123)
         torch.cuda.manual_seed_all(123)
         test_scores_list = []
-        for i in range(100):
+        for i in range(20):
             # manager.shuffle_data()
             val_acc, test_acc = self.submodel_manager.evaluate(best_structure)
             test_scores_list.append(test_acc)

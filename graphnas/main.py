@@ -48,7 +48,7 @@ def register_default_args(parser):
     parser.add_argument('--controller_grad_clip', type=float, default=0)
     parser.add_argument('--tanh_c', type=float, default=2.5)
     parser.add_argument('--softmax_temperature', type=float, default=5.0)
-    parser.add_argument('--derive_num_sample', type=int, default=100)
+    parser.add_argument('--derive_num_sample', type=int, default=50)
     parser.add_argument('--derive_finally', type=bool, default=True)
     parser.add_argument('--derive_from_history', type=bool, default=True)
 
