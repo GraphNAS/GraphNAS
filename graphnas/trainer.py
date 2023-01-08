@@ -4,6 +4,7 @@ import os
 import numpy as np
 import scipy.signal
 import torch
+import concurrent.futures
 
 import graphnas.utils.tensor_utils as utils
 from graphnas.gnn_model_manager import CitationGNNManager
@@ -65,7 +66,7 @@ class Trainer(object):
 
         controller_optimizer = _get_optimizer(self.args.controller_optim)
         self.controller_optim = controller_optimizer(self.controller.parameters(), lr=self.args.controller_lr)
-        #self.multi_thread = args.multi_thread
+        self.multi_thread = args.multi_thread
         if self.args.mode == "derive":
             self.load_model()
 
@@ -302,6 +303,7 @@ class Trainer(object):
         logger.info(f'eval | {gnn} | reward: {reward:8.2f} | scores: {scores:8.2f}')
 
     def derive_from_history(self):
+        #with open('/Users/teodorareu/PycharmProjects/GraphNAS_Project/Cora_microsub_manager_logger_file_1673199920.365182.txt', "r+") as f:
         with open(self.args.dataset + "_" + self.args.search_mode + self.args.submanager_log_file, "r+") as f:
             lines = f.readlines()
 
@@ -314,15 +316,21 @@ class Trainer(object):
         results.sort(key=lambda x: x[-1], reverse=True)
         best_structure = ""
         best_score = 0
-        for actions in results[:10]:
+        for actions in results[:20]:
             actions = eval(actions[0])
             np.random.seed(123)
             torch.manual_seed(123)
             torch.cuda.manual_seed_all(123)
             val_scores_list = []
-            for i in range(10):
-                val_acc, test_acc = self.submodel_manager.evaluate(actions)
-                val_scores_list.append(val_acc)
+            if self.multi_thread == True:
+                with concurrent.futures.ThreadPoolExecutor(max_workers=20) as executor:
+                    from itertools import repeat
+                    for actions, (val_acc, test_ac) in zip(repeat(actions, 20), executor.map(self.submodel_manager.evaluate, repeat(actions, 20))):
+                        val_scores_list.append(val_acc)
+            else:
+                for i in range(20):
+                    val_acc, test_acc = self.submodel_manager.evaluate(actions)
+                    val_scores_list.append(val_acc)
 
             tmp_score = np.mean(val_scores_list)
             if tmp_score > best_score:
