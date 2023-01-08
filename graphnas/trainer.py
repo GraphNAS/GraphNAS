@@ -65,7 +65,7 @@ class Trainer(object):
 
         controller_optimizer = _get_optimizer(self.args.controller_optim)
         self.controller_optim = controller_optimizer(self.controller.parameters(), lr=self.args.controller_lr)
-
+        #self.multi_thread = args.multi_thread
         if self.args.mode == "derive":
             self.load_model()
 
@@ -314,7 +314,7 @@ class Trainer(object):
         results.sort(key=lambda x: x[-1], reverse=True)
         best_structure = ""
         best_score = 0
-        for actions in results[:5]:
+        for actions in results[:10]:
             actions = eval(actions[0])
             np.random.seed(123)
             torch.manual_seed(123)
