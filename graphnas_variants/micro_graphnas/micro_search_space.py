@@ -18,9 +18,8 @@ gnn_list = [
     "zero",  # skip connection
 ]
 act_list = [
-    # "sigmoid", "tanh", "relu", "linear",
-    #  "softplus", "leaky_relu", "relu6", "elu"
-    "sigmoid", "tanh", "relu", "linear", "elu"
+     "sigmoid", "tanh", "relu", "linear",
+      "softplus", "leaky_relu", "relu6", "elu"
 ]
 
 
