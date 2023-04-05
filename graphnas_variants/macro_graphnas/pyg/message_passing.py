@@ -2,7 +2,8 @@ import inspect
 import sys
 
 import torch
-from torch_geometric.utils import scatter_
+# from torch_geometric.utils import scatter_
+from torch_scatter import scatter
 
 special_args = [
     'edge_index', 'edge_index_i', 'edge_index_j', 'size', 'size_i', 'size_j'
@@ -97,7 +98,8 @@ class MessagePassing(torch.nn.Module):
 
         out = self.message(*message_args)
         if self.aggr in ["add", "mean", "max"]:
-            out = scatter_(self.aggr, out, edge_index[i], dim_size=size[i])
+            # print(self.aggr)
+            out = scatter(src=out, index=edge_index[i], dim_size=size[i], reduce=self.aggr, dim=0)
         else:
             pass
         out = self.update(out, *update_args)

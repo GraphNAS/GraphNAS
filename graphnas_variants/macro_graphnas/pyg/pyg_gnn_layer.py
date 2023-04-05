@@ -116,7 +116,7 @@ class GeoLayer(MessagePassing):
         else:
             # Compute attention coefficients.
             alpha = self.apply_attention(edge_index, num_nodes, x_i, x_j)
-            alpha = softmax(alpha, edge_index[0], num_nodes)
+            alpha = softmax(alpha, edge_index[0], num_nodes=num_nodes)
             # Sample attention coefficients stochastically.
             if self.training and self.dropout > 0:
                 alpha = F.dropout(alpha, p=self.dropout, training=True)
