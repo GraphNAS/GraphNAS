@@ -21,11 +21,11 @@ def load_data(dataset="Cora", supervised=False, full_data=True):
     '''
     path = osp.join(osp.dirname(osp.realpath(__file__)), '..', 'data', dataset)
     if dataset in ["CS", "Physics"]:
-        dataset = Coauthor(path, dataset, T.NormalizeFeatures())
+        dataset = Coauthor(path, dataset, transform=T.NormalizeFeatures())
     elif dataset in ["Computers", "Photo"]:
-        dataset = Amazon(path, dataset, T.NormalizeFeatures())
+        dataset = Amazon(path, dataset, transform=T.NormalizeFeatures())
     elif dataset in ["Cora", "Citeseer", "Pubmed"]:
-        dataset = Planetoid(path, dataset, T.NormalizeFeatures())
+        dataset = Planetoid(path, dataset, transform=T.NormalizeFeatures())
     data = dataset[0]
     if supervised:
         if full_data:
