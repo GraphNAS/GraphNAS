@@ -3,7 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn import Parameter
 from torch_geometric.nn.inits import glorot, zeros
-from torch_geometric.utils import softmax, scatter_
+# from torch_geometric.utils import softmax, scatter_
+from torch_scatter import scatter
 
 
 def att_map(att_name, heads, out_channels):
@@ -185,7 +186,7 @@ class BasicAggregator(nn.Module):
 
     def forward(self, neighbor_vecs, alpha, edge_index, num_nodes):
         neighbor = self.preprocess(alpha, edge_index, neighbor_vecs, num_nodes)
-        out = scatter_(self.agg_type, neighbor, edge_index[1], dim_size=num_nodes)
+        out = scatter(src=neighbor, index=edge_index[1], dim_size=num_nodes, reduce=self.agg_type, dim=0)
         return out
 
     def preprocess(self, alpha, edge_index, neighbor_vecs, num_nodes):
@@ -213,7 +214,7 @@ class PoolingAggregator(BasicAggregator):
         neighbor = self.preprocess(alpha, edge_index, neighbor_vecs, num_nodes)
         for layer in self.layers:
             neighbor_vecs = layer(neighbor_vecs)
-        out = scatter_(self.agg_type, neighbor, edge_index[0], dim_size=num_nodes)
+        out = scatter(src=neighbor, index=edge_index[0], dim_size=num_nodes, reduce=self.agg_type, dim=0)
         return out
 
 
